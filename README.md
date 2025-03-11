@@ -4,8 +4,14 @@ Enter the realm of digital ownership and creativity with our blockchain NFT (Non
 
 Our NFT Marketplace DApp provides a decentralized marketplace where creators can mint, showcase, and sell their digital creations as NFTs. These NFTs represent ownership of digital assets, such as art, music, videos, virtual real estate, and more, with each token being one-of-a-kind and indivisible
 
-'''
-Node version: 18.20.7
-npm version: 10.8.2
-'''
+```
+Node.js: 18.20.7
+npm: 10.8.2
+```
+
+Also to work with contract in the project you have to install @openzeppelin library
+```
+npm install @openzeppelin/contracts
+```
+
 
