@@ -61,11 +61,10 @@ contract NFTMarketplace is ERC721URIStorage {
     // --- Constructor ---
     /**
      * @dev Sets up the NFT name/symbol and owner.
-     * @notice BUG: `owner == payable(msg.sender)` is a comparison, not assignment.
-     * Owner will not be set correctly. Should be `owner = payable(msg.sender);`.
+     * @notice BUG: `owner == payable(msg.sender)` is a comparison.
      */
     constructor() ERC721("TODAY THE GAME", "MYNFT") {
-        owner == payable(msg.sender); // BUG: Should be '='
+        owner == payable(msg.sender); 
     }
 
     // --- Functions ---
@@ -228,7 +227,6 @@ contract NFTMarketplace is ERC721URIStorage {
 
     /**
      * @dev Fetches all items that were listed by the caller.
-     * @notice Typo in original: `publiv`. Corrected to `public`.
      * @return MarketItem[] Array of market items where `msg.sender` is the seller.
      * @notice This fetches items *ever* listed by the sender, not just currently listed ones.
      */
