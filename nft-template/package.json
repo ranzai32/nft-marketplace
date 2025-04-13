@@ -12,5 +12,20 @@
     "next": "^15.2.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.6",
+    "@types/chai": "^5.2.1",
+    "@types/chai-as-promised": "^8.0.2",
+    "@types/concat-stream": "^2.0.3",
+    "@types/form-data": "^2.2.1",
+    "@types/glob": "^8.1.0",
+    "@types/lru-cache": "^7.10.9",
+    "@types/minimatch": "^5.1.2",
+    "@types/mocha": "^10.0.10",
+    "@types/pbkdf2": "^3.1.2",
+    "@types/prettier": "^2.7.3",
+    "@types/qs": "^6.9.18",
+    "@types/secp256k1": "^4.0.6"
   }
 }
