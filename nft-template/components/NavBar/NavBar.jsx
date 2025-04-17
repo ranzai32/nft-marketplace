@@ -86,67 +86,65 @@ const NavBar = () => {
         {/* // End of left section*/}
         
         <div className={Style.navbar_container_right}>
+          {/* Discover Menu*/}
           <div className={Style.navbar_container_right_discover}>
-            {/* Discover Menu*/}
             <p onClick={(e) => openMenu(e)}>Discover</p>
             {discover && (
               <div className={Style.navbar_container_right_discover_box}>
                 <Discover />
               </div>
             )}
-            
-            {/*Help Center Menu*/}
-            <div className={Style.navbar_container_right_help}>
-              <p onClick={(e) => openMenu(e)}>Help Center</p>
-              {help && (
-                <div className={Style.navbar_container_right_help_box}>
-                  <HelpCenter />
-                </div>
-              )}
-            </div>
-
-            {/*Notification*/}
-            <div className={Style.navbar_container_right_notify}>
-              <MdNotifications className={Style.notify} onClick={() => openNotification()}/>
-              {notification && <Notification />}
-            </div>
-
-            {/*Create button section*/}
-            <div className={Style.navbar_container_right_button}>
-              <Button btnText='Create'/>
-            </div>
-
-            {/*Profile section*/}
-            <div className={Style.navbar_container_right_profile_box}>
-              <div className={Style.navbar_container_right_profile}>
-                <Image 
-                  src={images.user1} 
-                  alt="Profile" 
-                  width={40} 
-                  height={40} 
-                  onClick={() => openProfile()}
-                  className={Style.navbar_container_right_profile}
-                />
-
-                {profile && <Profile />}
-              </div>
-            </div>
-
-            {/*Hamburger menu(Mobile)*/}
-            <div className={Style.navbar_container_right_menuBtn}>
-              <CgMenuRight  
-                className={Style.menuIcon}
-                onClick={() => OpenSideBar()} 
-              />
-            </div>
-
-            {/*Sidebar*/}
-            {openSideMenu && (
-              <div className={Style.sidebar}>
-                <Sidebar setOpenSideMenu={setOpenSideMenu} />
+          </div>
+          {/*Help Center Menu*/}
+          <div className={Style.navbar_container_right_help}>
+            <p onClick={(e) => openMenu(e)}>Help Center</p>
+            {help && (
+              <div className={Style.navbar_container_right_help_box}>
+                <HelpCenter />
               </div>
             )}
           </div>
+
+          {/*Notification*/}
+          <div className={Style.navbar_container_right_notify}>
+            <MdNotifications className={Style.notify} onClick={() => openNotification()}/>
+            {notification && <Notification />}
+          </div>
+
+          {/*Create button section*/}
+          <div className={Style.navbar_container_right_button}>
+            <Button btnText='Create'/>
+          </div>
+
+          {/*Profile section*/}
+          <div className={Style.navbar_container_right_profile_box}>
+            <div className={Style.navbar_container_right_profile}>
+              <Image 
+                src={images.user1} 
+                alt="Profile" 
+                width={40} 
+                height={40} 
+                onClick={() => openProfile()}
+                className={Style.navbar_container_right_profile}
+              />
+              {profile && <Profile />}
+            </div>
+          </div>
+
+          {/*Hamburger menu(Mobile)*/}
+          <div className={Style.navbar_container_right_menuBtn}>
+            <CgMenuRight  
+              className={Style.menuIcon}
+              onClick={() => OpenSideBar()} 
+            />
+          </div>
+
+          {/*Sidebar*/}
+          {openSideMenu && (
+            <div className={Style.sidebar}>
+              <Sidebar setOpenSideMenu={setOpenSideMenu} />
+            </div>
+          )}
         </div>
       </div>
     </div>
