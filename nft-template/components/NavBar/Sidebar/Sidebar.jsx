@@ -93,7 +93,7 @@ const Sidebar = ({setOpenSideMenu}) => {
           <Image src={images.logo} alt="logo" width={150} height={150}/>
           <p>Discover the most outstanding articles on all topics of NFT</p>
         </div>
-        <div className={Style.siBebar_social}>
+        <div className={Style.sideBar_social}>
           <a href="#">
             <TiSocialFacebook />
           </a>
@@ -148,8 +148,8 @@ const Sidebar = ({setOpenSideMenu}) => {
         </div>
 
         <div className={Style.sideBar_button}>
-          <Button btnName="Create" />
-          <Button btnName="Connect Wallet" />
+          <Button btnName="Create" handleClick={() => {}}/>
+          <Button btnName="Connect Wallet" handleClick={() => {}}/>
         </div>
     </div>
   )
