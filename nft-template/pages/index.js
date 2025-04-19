@@ -5,6 +5,7 @@ import { HeroSection,
          BigNFTSilder,
          Subscribe,
          Title,
+         Category
 } from '../components/componentsindex'
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Service />
       <BigNFTSilder />
       <Title heading='Browse by category' paragraph='Explore the NFTs in the most featured categories.'/>
+      <Category />
       <Subscribe />
     </div>
   )
