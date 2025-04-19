@@ -12,6 +12,9 @@
     justify-content: space-between;
     gap: 3rem;
 }
+.footer_box_social_img{
+    margin: 25px 0 ;
+}
 
 .footer_social{
     display: flex;

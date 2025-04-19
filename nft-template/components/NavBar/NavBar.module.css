@@ -21,6 +21,9 @@
     grid-template-columns: 1fr 2fr;
     align-items: center;
 }
+.logo_img{
+    margin: 25px 0;
+}
 
 .navbar_container_left_input_box{
     width: 60%;

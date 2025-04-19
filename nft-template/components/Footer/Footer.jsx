@@ -12,7 +12,7 @@ const Footer = () => {
     <div className={Style.footer}>
       <div className={Style.footer_box}>
         <div className={Style.footer_box_social}>
-          <Image src={images.logo} alt="footer logo" height={100} width={100}/>
+          <Image src={images.logo} alt="footer logo" height={40} width={100} className={Style.footer_box_social_img}/>
           <p>
             One of the greatest Non Fungible Token (NFT) marketplaces, where you can buy and sell NFTs. Buy, sell, and create exclusive digital items together!
           </p>

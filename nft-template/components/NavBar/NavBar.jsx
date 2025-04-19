@@ -74,7 +74,7 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-            <Image src={images.logo} alt="NFT Marketplace" width={100} height={100}/>
+            <Image src={images.logo} alt="NFT Marketplace" width={100} height={40} className={Style.logo_img}/>
           </div>
           <div className={Style.navbar_container_left_input}>
             <div className={Style.navbar_container_left_input_box}>
