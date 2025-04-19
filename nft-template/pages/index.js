@@ -3,6 +3,7 @@ import Style from '../styles/index.module.css'
 import { HeroSection,
          Service,
          BigNFTSilder,
+         Subscribe
 } from '../components/componentsindex'
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSilder />
+      <Subscribe />
     </div>
   )
 }
