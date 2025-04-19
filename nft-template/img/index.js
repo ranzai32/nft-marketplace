@@ -24,7 +24,7 @@ import service1 from "./service-1.png";
 import service2 from "./service-2.png";
 import service3 from "./service-3.png";
 import service4 from "./service-4.png";
-import logoLight from "./logo-light.svg";
+import logoLight from "./logo_light.png";
 import logo from "./logo.png";
 import facebook from "./facebook.svg";
 import twitter from "./twitter.svg";
