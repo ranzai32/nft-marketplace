@@ -51,7 +51,7 @@ const DaysComponents = () => {
             style={{ objectFit: 'cover' }}
           />
           <p>
-            Creator
+            Creator {' '}
             <span>
               Maksim
               <small><MdVerified /></small>
