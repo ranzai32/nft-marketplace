@@ -9,6 +9,7 @@ import Title from './Title/Title';
 import Category from './Category/Category';
 import Filter from './Filter/Filter';
 import NFTCard from './NFTCard/NFTCard';
+import Collection from './Collection/Collection';
 
-export { Button, Footer, NavBar, HeroSection, Service, BigNFTSilder, Subscribe, Title, Category, Filter, NFTCard };
+export { Button, Footer, NavBar, HeroSection, Service, BigNFTSilder, Subscribe, Title, Category, Filter, NFTCard, Collection };
 
