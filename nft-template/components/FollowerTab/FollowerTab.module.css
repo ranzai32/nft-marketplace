@@ -51,6 +51,10 @@
     gap: 2rem;
 }
 
+.followerTab_member{
+    text-align: center;
+}
+
 .followerTab_member_box{
     margin: 0 auto;
     padding: 7rem 0 0 0;
