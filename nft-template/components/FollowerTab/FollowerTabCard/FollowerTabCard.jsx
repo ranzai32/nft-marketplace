@@ -1,0 +1,73 @@
+import React, {useState} from 'react'
+import Image from 'next/image'
+import { MdVerified } from 'react-icons/md'
+import {TiTick} from 'react-icons/ti'
+
+import Style from './FollowerTabCard.module.css'
+import images from '../../../img'
+
+const FollowerTabCart = (index, element) => {
+  const [following, setFollowing] = useState(false);
+
+  const followMe = ()=>{
+    if(!following){
+      setFollowing(true);
+    } else{
+      setFollowing(false);
+    }
+  }
+  return (
+    <div className={Style.FollowerTabCart}>
+      <div className={Style.FollowerTabCart_rank}>
+        <p>
+          #{index + 1} <span>🥇</span>
+        </p>
+      </div>
+
+      <div className={Style.FollowerTabCart_box}>
+        <div className={Style.FollowerTabCart_box_img}>
+          <Image 
+            className={Style.FollowerTabCart_box_img_img} 
+            src={images.creatorbackground1} 
+            alt='profile background' 
+            width={250} height={150} 
+            objectFit='cover'
+          />
+        </div>
+
+        <div className={Style.FollowerTabCart_box_profile}>
+          <Image 
+            className={Style.FollowerTabCart_box_profile_img} 
+            alt='profile picture' 
+            width={50} height={50}
+            src={images.user1}
+          />
+        </div>
+
+        <div className={Style.FollowerTabCart_box_info}>
+          <div className={Style.FollowerTabCart_box_info_name}>
+            <h4>
+              Chill Man{""} 
+              <span>
+                <MdVerified/>
+              </span>
+            </h4>
+            <p>12.3 ETH</p>
+          </div>
+
+          <div className={Style.FollowerTabCart_box_info_following}>
+            {following ? (
+              <a onClick={() => followMe()}>
+                Follow{""} <span><TiTick/></span>
+              </a>
+            ): (
+              <a onClick={() => followMe()}>Following</a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default FollowerTabCart
