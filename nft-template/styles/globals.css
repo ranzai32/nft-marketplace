@@ -7,6 +7,7 @@
   --shadow-dark-color: #d3dae7;
   --shadow-light-color: #fff;
   --main-bg-color: #ecf0f3;
+  --bg-shadow-dark-color: #d3dae784;
 
   --box-shadow: 0.5rem 0.5rem 0.5rem var(--shadow-dark-color), -0.5rem -0.5rem 0.5rem var(--shadow-light-color);
 

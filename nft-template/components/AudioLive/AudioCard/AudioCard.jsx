@@ -5,6 +5,7 @@ import {TbPlayerPlay, TbPlayerPause} from 'react-icons/tb'
 
 import Style from './AudioCard.module.css'
 import images from '../../../img'
+import LikeProfile from '../../LikeProfile/LikeProfile'
 
 const AudioCard = () => {
   const [like, setLike] = useState(false);
@@ -39,7 +40,7 @@ const AudioCard = () => {
 
           <div className={Style.audioCard_box_time}>
             <div className={Style.audioCard_box_time_remaining}>
-              <small>Remaiming</small>
+              <small>Remaining</small>
               <h5>3h : 20m : 20s</h5>
             </div>
           </div>
@@ -70,12 +71,13 @@ const AudioCard = () => {
             </div>
 
             <div className={Style.audioCard_box_details_stock}>
+              <LikeProfile />
               <small>24 in stock</small>
             </div>
         </div>
 
         <div className={Style.audioCard_box_img}>
-          <Image src={images.creatorbackground10} alt='background' width={250} height={250}/>
+          <Image src={images.creatorbackground10} alt='background' width={550} height={500}/>
         </div>
       </div>
     </div>

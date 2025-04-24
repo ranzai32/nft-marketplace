@@ -19,7 +19,7 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSilder />
-      <Title heading='Latest Audio Collection' paragraph='Discover the most outstanding NFTs in all topics of life'/>
+      <Title heading='Audio Collection' paragraph='Discover the most outstanding NFTs in all topics of life'/>
       <AudioLive />
       <FollowerTab />
       <Collection />
