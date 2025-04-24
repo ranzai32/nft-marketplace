@@ -20,7 +20,7 @@
     line-height: 0;
     margin: 1 rem;
     font-size: .8rem;
-    padding: .1rm 5 rem;
+    padding: .1rm 5rem;
     border-radius: 2rem;
     border: 1px solid var(--icons-color);
     transition: all .3s ease-in;   
@@ -40,23 +40,25 @@
     border-radius: 2rem;
 }
 
-.FollowerTabCard_box_profile{
-    display: 1/-1;
-    text-align: center;
-    margin-top: -2rem;
+.FollowerTabCard_box_profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-};
+    margin-top: -2rem;
+    z-index: 1;
+}
 
 .FollowerTabCard_box_profile_img{
-    border-radius: 50%;
+    border-radius: 50% !important;
     border: 2px solid var(--icons-color);
-    padding: 1rem;
+    padding: 0.2rem;
     z-index: 222;
+    box-sizing: border-box;
 }
 
 .FollowerTabCard_box_profile::before{
     position: absolute;
-    color: "";
     width: 5rem;
     height: 5rem ;
     background-color: var(--main-bg-color);

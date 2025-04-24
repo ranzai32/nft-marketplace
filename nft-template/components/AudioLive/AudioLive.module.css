@@ -1,0 +1,25 @@
+.audioLive{
+    width: 100%;
+}
+
+.audioLive_box{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 8rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.audioLive_box_right{
+    padding: .5rem 0 0 0 ;
+    display: grid;
+    gap: 2rem;
+}
+
+.audioLive_box_left{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}

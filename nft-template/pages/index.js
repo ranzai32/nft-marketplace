@@ -10,6 +10,7 @@ import { HeroSection,
          NFTCard,
          Collection,
          FollowerTab,
+         AudioLive,
 } from '../components/componentsindex'
 
 const Home = () => {
@@ -18,6 +19,8 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSilder />
+      <Title heading='Latest Audio Collection' paragraph='Discover the most outstanding NFTs in all topics of life'/>
+      <AudioLive />
       <FollowerTab />
       <Collection />
       <Title heading='Featurerd NFTs' paragraph='Discover the most outstanding NFTs in all topics of life'/>

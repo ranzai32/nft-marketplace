@@ -6,7 +6,7 @@ import {TiTick} from 'react-icons/ti'
 import Style from './FollowerTabCard.module.css'
 import images from '../../../img'
 
-const FollowerTabCart = (index, element) => {
+const FollowerTabCard = (index, element) => {
   const [following, setFollowing] = useState(false);
 
   const followMe = ()=>{
@@ -17,17 +17,17 @@ const FollowerTabCart = (index, element) => {
     }
   }
   return (
-    <div className={Style.FollowerTabCart}>
-      <div className={Style.FollowerTabCart_rank}>
+    <div className={Style.FollowerTabCard}>
+      <div className={Style.FollowerTabCard_rank}>
         <p>
           #{index + 1} <span>🥇</span>
         </p>
       </div>
 
-      <div className={Style.FollowerTabCart_box}>
-        <div className={Style.FollowerTabCart_box_img}>
+      <div className={Style.FollowerTabCard_box}>
+        <div className={Style.FollowerTabCard_box_img}>
           <Image 
-            className={Style.FollowerTabCart_box_img_img} 
+            className={Style.FollowerTabCard_box_img_img} 
             src={images.creatorbackground1} 
             alt='profile background' 
             width={250} height={150} 
@@ -35,17 +35,17 @@ const FollowerTabCart = (index, element) => {
           />
         </div>
 
-        <div className={Style.FollowerTabCart_box_profile}>
+        <div className={Style.FollowerTabCard_box_profile}>
           <Image 
-            className={Style.FollowerTabCart_box_profile_img} 
+            className={Style.FollowerTabCard_box_profile_img} 
             alt='profile picture' 
             width={50} height={50}
             src={images.user1}
           />
         </div>
 
-        <div className={Style.FollowerTabCart_box_info}>
-          <div className={Style.FollowerTabCart_box_info_name}>
+        <div className={Style.FollowerTabCard_box_info}>
+          <div className={Style.FollowerTabCard_box_info_name}>
             <h4>
               Chill Man{""} 
               <span>
@@ -55,7 +55,7 @@ const FollowerTabCart = (index, element) => {
             <p>12.3 ETH</p>
           </div>
 
-          <div className={Style.FollowerTabCart_box_info_following}>
+          <div className={Style.FollowerTabCard_box_info_following}>
             {following ? (
               <a onClick={() => followMe()}>
                 Follow{""} <span><TiTick/></span>
@@ -70,4 +70,4 @@ const FollowerTabCart = (index, element) => {
   )
 }
 
-export default FollowerTabCart
+export default FollowerTabCard
