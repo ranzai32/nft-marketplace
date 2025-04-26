@@ -11,7 +11,8 @@ import { HeroSection,
          Collection,
          FollowerTab,
          AudioLive,
-         Slider
+         Slider,
+         Brand
 } from '../components/componentsindex'
 
 const Home = () => {
@@ -31,6 +32,7 @@ const Home = () => {
       <Title heading='Browse by category' paragraph='Explore the NFTs in the most featured categories.'/>
       <Category />
       <Subscribe />
+      <Brand />
     </div>
   )
 }
