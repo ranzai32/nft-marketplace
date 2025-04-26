@@ -11,6 +11,7 @@ import { HeroSection,
          Collection,
          FollowerTab,
          AudioLive,
+         Slider
 } from '../components/componentsindex'
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
       <Title heading='Audio Collection' paragraph='Discover the most outstanding NFTs in all topics of life'/>
       <AudioLive />
       <FollowerTab />
+      <Slider />
       <Collection />
       <Title heading='Featurerd NFTs' paragraph='Discover the most outstanding NFTs in all topics of life'/>
       <Filter />

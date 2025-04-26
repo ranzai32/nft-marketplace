@@ -13,7 +13,8 @@ import Collection from './Collection/Collection';
 import FollowerTab from './FollowerTab/FollowerTab';
 import AudioLive from './AudioLive/AudioLive';
 import LikeProfile from './LikeProfile/LikeProfile';
+import Slider from './Slider/Slider';
 
 export { Button, Footer, NavBar, HeroSection, Service, BigNFTSilder, Subscribe, Title, 
-    Category, Filter, NFTCard, Collection, FollowerTab, AudioLive,LikeProfile };
+    Category, Filter, NFTCard, Collection, FollowerTab, AudioLive, LikeProfile, Slider };
 
