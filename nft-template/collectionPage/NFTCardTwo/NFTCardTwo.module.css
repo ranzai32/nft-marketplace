@@ -82,7 +82,7 @@
 }
 
 .NFTCardTwo_box_price_box{
-    border-bottom: 1px solid var(--icons-color);
+    border: 1px solid var(--icons-color);
     border-radius: 1rem;
 }
 

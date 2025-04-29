@@ -30,7 +30,7 @@ const NFTCardTwo = ({ NFTData }) => {
                 <BsImage className={Style.NFTCardTwo_box_like_box_box_icon} />
                 <p onClick={() => likeNFT()}>
                   {like ? 
-                    <AiOutlineHeart /> : <AiOutlineHeart />
+                    <AiOutlineHeart /> : <AiFillHeart />
                   }{""}
                   <span>{likeInc + 1}</span>
                 </p>
