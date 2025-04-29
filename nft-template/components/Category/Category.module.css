@@ -39,25 +39,6 @@
     font-size: 3rem;
     margin-top: 1rem;
 }
-
-
-@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
-    .category{
-        grid-template-columns: 1fr;
-    }
-    .box_category{
-        width: 90%;
-    }
-}
-
-@media screen and (min-device-width: 426px) and (max-device-width: 770px) {
-    .category{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (min-device-width: 771px) and (max-device-width: 1025px) {
-    .category{
-        grid-template-columns: repeat(3, 1fr);
-    }
+.category_box_title_info h4{
+    font-size: 0.8rem;
 }

@@ -6,12 +6,12 @@ import Style from './SliderCard.module.css'
 import images from '../../../img'
 import LikeProfile from '../../LikeProfile/LikeProfile'
 
-const SliderCard = () => {
+const SliderCard = ({element, index}) => {
   return (
     <motion.div className={Style.sliderCard}>
       <div className={Style.sliderCard_box}>
         <motion.div className={Style.sliderCard_box_img}>
-          <Image className={Style.sliderCard_box_img_img} src={images.creatorbackground10} alt='slider profile' width={500} height={300} objectFit='cover'/>
+          <Image className={Style.sliderCard_box_img_img} src={element.background} alt='slider profile' width={500} height={300} objectFit='cover'/>
         </motion.div>
         <div className={Style.sliderCard_box_title}>
           <p>NFT video #3456</p>

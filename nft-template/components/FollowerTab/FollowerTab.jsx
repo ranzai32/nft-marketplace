@@ -3,11 +3,34 @@ import { RiUserFollowFill, RiUserUnfollowFill, RiAwardLine } from 'react-icons/r
 
 import Style from './FollowerTab.module.css'
 import FollowerTabCard from './FollowerTabCard/FollowerTabCard'
+import images from '../../img'
 
 const FollowerTab = () => {
-    const CardArray = [1, 2, 3, 4, 5, 6, 7, 8];
-    const FollowingArray = [1, 2, 3, 4, 5, 6];    
-    const NewsArray = [1, 2, 3, 4, 5];
+    const CardArray = [
+        { background: images.creatorbackground1, user: images.user1 },
+        { background: images.creatorbackground2, user: images.user2 },
+        { background: images.creatorbackground3, user: images.user3 },
+        { background: images.creatorbackground4, user: images.user4 },
+        { background: images.creatorbackground5, user: images.user5 },
+        { background: images.creatorbackground6, user: images.user6 },
+        { background: images.creatorbackground7, user: images.user7 },
+        { background: images.creatorbackground8, user: images.user8 },
+    ];
+    const FollowingArray = [
+        { background: images.creatorbackground4, user: images.user4 },
+        { background: images.creatorbackground5, user: images.user5 },
+        { background: images.creatorbackground6, user: images.user6 },
+        { background: images.creatorbackground7, user: images.user7 },
+        { background: images.creatorbackground8, user: images.user8 },
+        { background: images.creatorbackground9, user: images.user9 },
+    ];
+    const NewsArray = [
+        { background: images.creatorbackground6, user: images.user6 },
+        { background: images.creatorbackground7, user: images.user7 },
+        { background: images.creatorbackground8, user: images.user8 },
+        { background: images.creatorbackground9, user: images.user9 },
+        { background: images.creatorbackground10, user: images.user10 },
+    ];
 
     const [popular, setPopular] = useState(true);
     const [following, setFollowing] = useState(false);
