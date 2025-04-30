@@ -70,4 +70,4 @@ const FollowerTabCard = ({ index, element }) => {
   )
 }
 
-export default FollowerTabCard
+export default FollowerTabCard;
