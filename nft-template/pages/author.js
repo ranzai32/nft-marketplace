@@ -30,11 +30,11 @@ const author = () => {
       <Banner bannerImage={images.creatorbackground3} />
       <AuthorProfileCard />
       <AuthorTaps
-        collectiables={collectiables}
-        created={created}
-        like={like}
-        follower={follower}
-        following={following}
+        setCollectiables={setCollectiables}
+        setCreated={setCreated}
+        setLike={setLike}
+        setFollower={setFollower}
+        setFollowing={setFollowing}
       />
 
       <Title heading="Popular Creators" paragraph="Click on NFT music or audio"/>
@@ -44,7 +44,6 @@ const author = () => {
           <FollowerTabCard key={index + 1} index={index} element={element}/>
         ))}
       </div>
-
       <Brand />
     </div>
   );
