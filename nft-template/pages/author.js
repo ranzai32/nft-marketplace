@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import Style from '../styles/author.module.css';
-import { Banner, NFTCardTwo } from '../collectionPage/collectionindex';
+import { Banner} from '../collectionPage/collectionindex';
 import { Brand, Title } from '../components/componentsindex';
 import images from '../img';
-import { AuthorProfileCard, AuthorTaps } from '../authorPage/authorIndex';
+import { AuthorProfileCard, AuthorTaps, AuthorNFTCardBox } from '../authorPage/authorIndex';
 import FollowerTabCard from '../components/FollowerTab/FollowerTabCard/FollowerTabCard';
 
 const author = () => {
@@ -26,7 +26,7 @@ const author = () => {
   const [following, setFollowing] = useState(false);
 
   return (
-    <div className={Style.banner}>
+    <div className={Style.author}>
       <Banner bannerImage={images.creatorbackground3} />
       <AuthorProfileCard />
       <AuthorTaps
@@ -36,12 +36,20 @@ const author = () => {
         setFollower={setFollower}
         setFollowing={setFollowing}
       />
+      
+      <AuthorNFTCardBox 
+        collectiables={collectiables}
+        created={created}
+        like={like}
+        follower={follower}
+        following={following}
+      />
 
       <Title heading="Popular Creators" paragraph="Click on NFT music or audio"/>
 
-      <div className={Style.author_popular_cards}>
+      <div className={Style.author_box}>
         {popularArray.map((element, index) => (
-          <FollowerTabCard key={index + 1} index={index} element={element}/>
+          <FollowerTabCard index={index} element={element}/>
         ))}
       </div>
       <Brand />
