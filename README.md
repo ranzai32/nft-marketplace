@@ -1,4 +1,4 @@
-# NFT Marketplace from Alikhan, Maksim
+# NFT Marketplace from Alikhan, Maksim, Alinur
 
 # Functionality Demo
 ![alt text](screens/image.png)
@@ -11,5 +11,6 @@
 
 # Activate localhost:
 ```sh
+cd nft-template
 npm run dev
 ```

@@ -4,8 +4,6 @@ import Link from 'next/link'
 import Style from './Discover.module.css'
 
 const Discover = () => {
-
-  //----Discover navigation menu
   const discover = [
     { 
       name: 'Collection', 
@@ -26,6 +24,10 @@ const Discover = () => {
     { 
       name: 'Account Setting', 
       link: 'account' 
+    },
+    {
+      name: 'Upload NFT',
+      link: 'uploadNFT'
     },
     { 
       name: 'Connect Wallet', 
