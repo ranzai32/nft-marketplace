@@ -12,8 +12,8 @@ import images from '../../img';
 
 const NFTDetailsImg = () => {
   
-  const [description, setDescription] = useState(true);
-  const [details, setDetails] = useState(true);
+  const [description, setDescription] = useState(false);
+  const [details, setDetails] = useState(false);
   const [like, setLike] = useState(false);
 
   const openDescription = ()=> {
@@ -26,17 +26,17 @@ const NFTDetailsImg = () => {
 
   const openDetails = ()=> {
     if(!details){
-      setDetails(true)
+      setDetails(true);
     } else {
-      setDetails(false)
+      setDetails(false);
     }
   };
 
   const likeNFT = ()=> {
-    if(!like){
-      setLike(true)
+    if(!like) {
+      setLike(true);
     } else {
-      setLike(false)
+      setLike(false);
     }
   };
 
@@ -46,7 +46,7 @@ const NFTDetailsImg = () => {
         <div className={Style.NFTDetailsImg_box_NFT}>
           <div className={Style.NFTDetailsImg_box_NFT_like}>
             <BsImages className={Style.NFTDetailsImg_box_NFT_like_icon}/>
-            <p onClick={()=> likeNFT}>
+            <p onClick={() => likeNFT()}>
               {like ? (
                 <AiOutlineHeart
                   className={Style.NFTDetailsImg_box_NFT_like_icon}
@@ -66,8 +66,8 @@ const NFTDetailsImg = () => {
               src={images.nft_image_1} 
               className={Style.NFTDetailsImg_box_NFT_img_img}
               alt="NFT image"
-              width={700}
-              height={800}
+              width={640}
+              height={640}
               objectFit="cover"
             />  
           </div>

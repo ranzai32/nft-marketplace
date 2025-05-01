@@ -174,42 +174,42 @@ const NFTDescription = () => {
 
         
 
-        <div className={Style.NFTDescription_box_profile_bidding}>
+        <div className={Style.NFTDescription_box_profile_biding}>
           <p>
-            <MdVerified/> <span> Auction ending in: </span>
+            <MdTimer/> <span> Auction ending in: </span>
           </p>
 
-          <div className={Style.NFTDescription_box_profile_bidding_box_timer}>
-            <div className={Style.NFTDescription_box_profile_bidding_box_timer_item}>
+          <div className={Style.NFTDescription_box_profile_biding_box_timer}>
+            <div className={Style.NFTDescription_box_profile_biding_box_timer_item}>
               <p>2</p>
               <span>Days</span>
             </div>
-            <div className={Style.NFTDescription_box_profile_bidding_box_timer_item}>
+            <div className={Style.NFTDescription_box_profile_biding_box_timer_item}>
               <p>22</p>
               <span>Hours</span>
             </div>
-            <div className={Style.NFTDescription_box_profile_bidding_box_timer_item}>
+            <div className={Style.NFTDescription_box_profile_biding_box_timer_item}>
               <p>14</p>
               <span>mins</span>
             </div>
-            <div className={Style.NFTDescription_box_profile_bidding_box_timer_item}>
+            <div className={Style.NFTDescription_box_profile_biding_box_timer_item}>
               <p>22</p>
               <span>secs</span>
             </div>
           </div>
 
           <div className={Style.NFTDescription_box_profile_biding_box_price}>
-            <div className={Style.NFTDescription_box_profile_bidding_box_price_bid}>
+            <div className={Style.NFTDescription_box_profile_biding_box_price_bid}>
               <small>Current Bid</small>
               <p> 
-                1.000 ETH <span> ( = $1,900,00) </span>
+                1.000 ETH <span> ( ≈ $1,900,00) </span>
               </p>
             </div>
 
             <span>[96 in stock]</span>
           </div>
 
-          <div className={Style.NFTDescription_box_profile_bidding_box_button}>
+          <div className={Style.NFTDescription_box_profile_biding_box_button}>
             <Button 
               icon=<FaWallet /> 
               btnName="Place a bid" 
@@ -224,25 +224,25 @@ const NFTDescription = () => {
             />
           </div>
 
-          <div className={Style.NFTDescription_box_profile_bidding_box_tabs}>
+          <div className={Style.NFTDescription_box_profile_biding_box_tabs}>
             <button onClick={(e) => openTabs(e)}>Bid History</button>
             <button onClick={(e) => openTabs(e)}>Provanance</button>
             <button onClick={(e) => openOwner()}>Owner</button>
           </div>
 
           {history && (
-            <div className={Style.NFTDescription_box_profile_bidding_box_card}>
+            <div className={Style.NFTDescription_box_profile_biding_box_card}>
               <NFTTabs dataTab={historyArray}/>
             </div>
           )}
           {provanance && (
-            <div className={Style.NFTDescription_box_profile_bidding_box_card}>
+            <div className={Style.NFTDescription_box_profile_biding_box_card}>
               <NFTTabs dataTab={provananceArray}/>
             </div>
           )}
-          {ownerArray && (
-            <div className={Style.NFTDescription_box_profile_bidding_box_card}>
-              <NFTTabs dataTab={ownerArray}/>
+          {owner && (
+            <div className={Style.NFTDescription_box_profile_biding_box_card}>
+              <NFTTabs dataTab={ownerArray} icon=<MdVerified/> />
             </div>
           )}
         </div>
