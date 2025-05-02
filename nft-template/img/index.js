@@ -43,6 +43,8 @@ import musiceWave from "./musicwave.png";
 import update from "./update.png";
 import earn from "./earn.png";
 import NFTVideo from "./creatorbackground-11.jpg"
+import upload from "./upload.png"
+
 export default {
   collection,
   update,
@@ -89,4 +91,5 @@ export default {
   zgcmq,
   earn,
   NFTVideo,
+  upload,
 };

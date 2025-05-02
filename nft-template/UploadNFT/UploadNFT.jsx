@@ -140,7 +140,7 @@ const UploadNFT = () => {
                   </div>
                 </div>
 
-                <p>Crypto Legend - Professor</p>
+                <p>Crypto Legend - {element.category}</p>
               </div>
             ))}
           </div>
@@ -153,7 +153,7 @@ const UploadNFT = () => {
                 <div className={formStyle.Form_box_input_box_icon}>
                   <FaPercent/>
                 </div>
-                <input type='text' placeholder='20%' onClick={(e) => setRoyalties(e.target.value)}></input>
+                <input type='text' placeholder='20%' onClick={(e) => {setRoyalties(e.target.value)}}></input>
               </div>
             </div>
             <div className={formStyle.Form_box_input}>
@@ -162,7 +162,7 @@ const UploadNFT = () => {
                 <div className={formStyle.Form_box_input_box_icon}>
                   <MdOutlineAttachFile/>
                 </div>
-                <input type='text' placeholder='160MB' onClick={(e) => setFileSize(e.target.value)}></input>
+                <input type='text' placeholder='160MB' onClick={(e) => {setFileSize(e.target.value)}}></input>
               </div>
             </div>
             <div className={formStyle.Form_box_input}>
@@ -171,13 +171,14 @@ const UploadNFT = () => {
                 <div className={formStyle.Form_box_input_box_icon}>
                   <AiTwotonePropertySafety/>
                 </div>
-                <input type='text' placeholder='Properties' onClick={(e) => setProperties(e.target.value)}></input>
+                <input type='text' placeholder='Properties' onClick={(e) => {setProperties(e.target.value)}}></input>
               </div>
             </div>
         </div>
 
         <div className={Style.upload_box_btn}>
           <Button btnName="Upload" handleClick={() => {}} className={Style.upload_box_btn_style}/>
+          <Button btnName="Review" handleClick={() => {}} className={Style.upload_box_btn_style}/>
         </div>
       </div>
     </div>

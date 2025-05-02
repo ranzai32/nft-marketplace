@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Style from '../styles/upload-nft.module.css'
+import Style from '../styles/uploadNFT.module.css'
 import {UploadNFT, DropZone} from '../UploadNFT/uploadNFTindex'
 
 const uploadNFT = () => {
