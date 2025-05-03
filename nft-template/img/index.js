@@ -47,6 +47,8 @@ import upload from "./upload.png";
 import provider1 from "./provider-1.png";
 import provider2 from "./provider-2.png";
 import provider3 from "./provider-3.png";
+import founder1 from "./founder-1.jpg";
+import founder2 from "./founder-2.png"
 
 export default {
   collection,
@@ -97,5 +99,7 @@ export default {
   upload,
   provider1,
   provider2,
-  provider3
+  provider3,
+  founder1,
+  founder2
 };
