@@ -51,6 +51,7 @@ export const NFTMarketplaceProvider = (({children}) => {
             } else{
                 console.log("No account found");
             }
+            console.log(currentAccount);
         } catch (error) {
             console.log("Something wrong while connecting to wallet")
         }
@@ -61,12 +62,12 @@ export const NFTMarketplaceProvider = (({children}) => {
     }, []);
 
     //connect walleet function
-    const collectWallet = async() => {
+    const connectWallet = async() => {
         try {
             if(!window.ethereum) return  console.log("Install Metamask");
 
             const accounts = await window.ethereum.request({
-                method: "eth_requestAccount",
+                method: "eth_requestAccounts",
             });
 
             setCurrentAccount(accounts[0]);
@@ -231,7 +232,7 @@ export const NFTMarketplaceProvider = (({children}) => {
     return (
         <NFTMarketplaceContext.Provider value={{ 
             checkIfWalletConnected,
-            collectWallet, 
+            connectWallet: connectWallet, 
             uploadToIPFS,
             createNFT,
             fetchNFTs,

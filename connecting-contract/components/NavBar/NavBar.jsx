@@ -1,14 +1,16 @@
-import React, {useState, useEffect} from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import {MdNotifications} from 'react-icons/md'
-import {BsSearch} from 'react-icons/bs'
-import {CgMenuLeft, CgMenuRight} from 'react-icons/cg'
+import React, {useState, useEffect, useContext } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import {MdNotifications} from 'react-icons/md';
+import {BsSearch} from 'react-icons/bs';
+import {CgMenuLeft, CgMenuRight} from 'react-icons/cg';
 
-import Style from './NavBar.module.css'
-import {Discover, HelpCenter, Notification, Profile, Sidebar} from './index'
-import {Button} from '../componentsindex'
-import images from '../../img'
+import Style from './NavBar.module.css';
+import {Discover, HelpCenter, Notification, Profile, Sidebar} from './index';
+import {Button} from '../componentsindex';
+import images from '../../img';
+
+import {NFTMarketplaceContext} from '../../Context/NFTMarketplaceContext';
 
 const NavBar = () => {
   //USESTATE
@@ -75,14 +77,14 @@ const NavBar = () => {
       setOpenSideMenu(false);
     }
   }
+
+  const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-            <Link href="/">
-              <Image src={images.logo} alt="NFT Marketplace" width={120} height={48} className={Style.logo_img}/>
-            </Link>
+            <Image src={images.logo} alt="NFT Marketplace" width={120} height={48} className={Style.logo_img}/>
           </div>
           <div className={Style.navbar_container_left_input}>
             <div className={Style.navbar_container_left_input_box}>
@@ -121,7 +123,13 @@ const NavBar = () => {
 
           {/*Create button section*/}
           <div className={Style.navbar_container_right_button}>
-            <Button btnName='Create' handleClick={() => {}}/>
+            {currentAccount == "" ? 
+              <Button btnName="Connect" handleClick={() => connectWallet()}/> 
+              : 
+              <Link href={{ pathname: "/uploadNFT" }}>
+                <Button btnName='Create' handleClick={() => { }} />
+              </Link>
+            }
           </div>
 
           {/*Profile section*/}
