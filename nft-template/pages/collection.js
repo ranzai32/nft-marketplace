@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import Style from '../styles/collection.module.css'
 import images from '../img'
-import { Banner, CollectionProfile, NFTCardTwo } from '../collectionPage/collectionindex'
+import { Banner, CollectionProfile, NFTCardTwo } from '../CollectionPage/collectionindex'
 import { Slider, Brand } from '../components/componentsindex'
 import Filter from '../components/Filter/Filter'
 

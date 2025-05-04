@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import Style from '../styles/author.module.css';
-import { Banner} from '../collectionPage/collectionindex';
+import { Banner} from '../CollectionPage/collectionindex';
 import { Brand, Title } from '../components/componentsindex';
 import images from '../img';
-import { AuthorProfileCard, AuthorTaps, AuthorNFTCardBox } from '../authorPage/authorIndex';
+import { AuthorProfileCard, AuthorTaps, AuthorNFTCardBox } from '../AuthorPage/authorIndex';
 import FollowerTabCard from '../components/FollowerTab/FollowerTabCard/FollowerTabCard';
 
 const author = () => {

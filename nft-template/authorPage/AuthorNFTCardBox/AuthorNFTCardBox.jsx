@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 import Style from './AuthorNFTCardBox.module.css'
 import images from '../../img'
-import { NFTCardTwo } from '../../collectionPage/collectionindex'
+import { NFTCardTwo } from '../../CollectionPage/collectionindex'
 import FollowerTabCard from '../../components/FollowerTab/FollowerTabCard/FollowerTabCard'
 
 const AuthorNFTCardBox = ({collectiables, created, like, follower, following}) => {

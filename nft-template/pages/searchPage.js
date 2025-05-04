@@ -3,7 +3,7 @@ import Style from "../styles/searchPage.module.css";
 import { Slider, Brand } from '@/components/componentsindex';
 import { SearchBar } from '../SearchPage/searchBarindex';
 import {Filter} from "../components/componentsindex";
-import { NFTCardTwo, Banner } from '../collectionPage/collectionindex';
+import { NFTCardTwo, Banner } from '../CollectionPage/collectionindex';
 import images from '../img';
 
 const searchPage = () => {
