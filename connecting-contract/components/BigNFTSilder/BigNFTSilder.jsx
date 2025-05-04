@@ -118,7 +118,7 @@ const dec = useCallback(()=> {
                     </div>
                   </div>
                 
-                  <div classname={Style.bigNFTSlider_box_left_creator_collection}>
+                  <div className={Style.bigNFTSlider_box_left_creator_collection}>
                     <AiFillFire
                       className={Style.bigNFTSlider_box_left_creator_collection_icon}
                     />
@@ -130,7 +130,7 @@ const dec = useCallback(()=> {
             </div>
           </div>
 
-          <div classname={Style.bigNFTSlider_box_left_bidding}>
+          <div className={Style.bigNFTSlider_box_left_bidding}>
             <div className={Style.bigNFTSlider_box_left_bidding_box}>
                 <small>Current Bid</small>
                 <p>{sliderData[idNumber].price}<span>$221,21</span>

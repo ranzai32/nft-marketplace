@@ -10,7 +10,7 @@ const LikeProfile = () => {
         <div className={Style.like}>
             {imageArray.map((element, index)=> (
                 <div className={Style.like_box} key={index + 1}>
-                    <Image src={imageArray[index]} width={15} height={15} className={Style.like_box_img}/>
+                    <Image src={imageArray[index]} width={15} height={15} className={Style.like_box_img} alt='image'/>
                 </div>
             ))}
         </div>
