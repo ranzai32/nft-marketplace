@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "ether": "^0.0.9",
+    "@openzeppelin/contracts": "5.0.2",
+    "ethers": "^6.0.0",
     "framer-motion": "^12.9.2",
     "next": "^15.2.4",
     "react": "^19.1.0",
