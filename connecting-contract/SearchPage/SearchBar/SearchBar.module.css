@@ -1,0 +1,38 @@
+.SearchBar{
+    width: 100%;
+
+}
+
+.SearchBar_box{
+    width: 40%;
+    margin: 0 auto;
+    background-color: var(--main-bg-color);
+    color: var(--main-bg-color);
+    display: flex;
+    border-radius: 5rem;
+    align-items: center;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--box-shadow);
+}
+
+.SearchBar_box_icon{
+    font-size: 3rem;
+    padding: .5rem .8rem;
+    cursor: pointer;
+    color: rgb(73, 85, 116);
+}
+
+.SearchBar_box input{
+    width: 85%;
+    border: 0;
+    outline: 0;
+    padding: 2rem;
+    background-color: var(--main-bg-color);
+}
+
+.SearchBar_box input::placeholder{
+    color: rgb(73, 85, 116);
+    font-size: 1.2rem;
+}
+
