@@ -4,6 +4,7 @@ import { FaPercent } from 'react-icons/fa';
 import { AiTwotonePropertySafety } from 'react-icons/ai';
 import { TiTick } from 'react-icons/ti';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import Style from './UploadNFT.module.css';
 import formStyle from '../accountPage/Form.module.css';
@@ -11,15 +12,19 @@ import images from '../img';
 import {Button} from '../components/componentsindex';
 import { DropZone } from './uploadNFTindex';
 
-const UploadNFT = () => {
+const UploadNFT = ({uploadToIPFS, createNFT}) => {
+  const [price, setPrice] = useState("");
   const [active, setActive] = useState(0);
-  const [itemName, setItemName] = useState("");
+  const [name, setName] = useState("");
   const [website, setWebsite] = useState("");
   const [description, setDescription] = useState("");
   const [royalties, setRoyalties] = useState("");
   const [fileSize, setFileSize] = useState("");
   const [category, setCategory] = useState(0);
   const [properties, setProperties] = useState("");
+  const [image, setImage] = useState(null);
+
+  const router = useRouter();
 
   const categoryArray = [
     {
@@ -54,14 +59,15 @@ const UploadNFT = () => {
         title="JPG, PNG, WEBM, MAX 100MB"
         heading="Drag & drop file"
         subHeading="or Browse media on your device"
-        itemName={itemName}
+        name={name}
         website={website}
         description={description}
         royalties={royalties}
         fileSize={fileSize}
         category={category}
         properties={properties}
-        image={images.upload}
+        setImage={setImage}
+        uploadToIPFS={uploadToIPFS}
       />
 
       <div className={Style.upload_box}>
@@ -71,8 +77,18 @@ const UploadNFT = () => {
             type='text' 
             placeholder='Abraham Lincoln' 
             className={formStyle.Form_box_input_username}
-            onChange={(e) =>  setItemName(e.target.value)}
+            onChange={(e) =>  setName(e.target.value)}
           ></input>
+        </div>
+
+        <div className={formStyle.Form_box_input}>
+            <label htmlFor='price'>Price</label>
+            <input 
+              type='text' 
+              placeholder='100' 
+              className={formStyle.Form_box_input_username}
+              onChange={(e) =>  setPrice(e.target.value)}
+            ></input>
         </div>
 
         <div className={formStyle.Form_box_input}>
@@ -177,7 +193,11 @@ const UploadNFT = () => {
         </div>
 
         <div className={Style.upload_box_btn}>
-          <Button btnName="Upload" handleClick={() => {}} className={Style.upload_box_btn_style}/>
+          <Button 
+            btnName="Upload" 
+            handleClick={async() => createNFT(name, price, image, description, router, website, royalties, fileSize, category, properties)} 
+            className={Style.upload_box_btn_style}
+          />
           <Button btnName="Review" handleClick={() => {}} className={Style.upload_box_btn_style}/>
         </div>
       </div>

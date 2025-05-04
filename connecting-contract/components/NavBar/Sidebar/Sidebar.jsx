@@ -8,7 +8,7 @@ import Style from './Sidebar.module.css'
 import images from '../../../img'
 import Button from '../../Button/Button'
 
-const Sidebar = ({setOpenSideMenu}) => {
+const Sidebar = ({setOpenSideMenu, currentAccount, connectWallet}) => {
   //----UseState----//
   const [openDiscover, setOpenDiscover] = useState(false);
   const [openHelp, setOpenHelp] = useState(false)
