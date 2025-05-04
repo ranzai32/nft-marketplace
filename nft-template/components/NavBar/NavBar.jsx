@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {MdNotifications} from 'react-icons/md'
@@ -10,6 +10,11 @@ import {Discover, HelpCenter, Notification, Profile, Sidebar} from './index'
 import {Button} from '../componentsindex'
 import images from '../../img'
 
+
+import { NFTMarketplaceContext } from '../../Context/NFTMarketplaceContext';
+
+
+
 const NavBar = () => {
   //USESTATE
   const [discover, setDiscover] = useState(false);
@@ -17,6 +22,7 @@ const NavBar = () => {
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
+
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
@@ -75,6 +81,10 @@ const NavBar = () => {
       setOpenSideMenu(false);
     }
   }
+
+  const { currentAccount, connectWallet} = useContext(NFTMarketplaceContext);
+
+
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
@@ -119,7 +129,7 @@ const NavBar = () => {
 
           {/*Create button section*/}
           <div className={Style.navbar_container_right_button}>
-            <Button btnName='Create' handleClick={() => {}}/>
+            {currentAccount == "" ? <Button btnName="Connect" handleClick={()=> connectWallet()}/> : <Button btnName='Create' />}
           </div>
 
           {/*Profile section*/}

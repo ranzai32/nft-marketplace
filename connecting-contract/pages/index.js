@@ -20,7 +20,10 @@ import { NFTMarketplaceContext } from '../Context/NFTMarketplaceContext'
 import { check } from 'prettier'
 
 const Home = () => {
-  const {} = useContext(NFTMarketplaceContext);
+  const { checkIfWalletConnected } = useContext(NFTMarketplaceContext);
+  useEffect(() => {
+    checkIfWalletConnected();
+  }, []);
 
   return (
     <div className={Style.homePage}>
