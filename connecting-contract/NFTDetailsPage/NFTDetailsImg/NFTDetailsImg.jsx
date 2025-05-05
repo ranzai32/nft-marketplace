@@ -10,7 +10,7 @@ import Style from './NFTDetailsImg.module.css';
 import images from '../../img';
 
 
-const NFTDetailsImg = () => {
+const NFTDetailsImg = ({ nft }) => {
   
   const [description, setDescription] = useState(false);
   const [details, setDetails] = useState(false);
@@ -63,7 +63,7 @@ const NFTDetailsImg = () => {
 
           <div className={Style.NFTDetailsImg_box_NFT_img}>
             <Image 
-              src={images.nft_image_1} 
+              src={nft.image} 
               className={Style.NFTDetailsImg_box_NFT_img_img}
               alt="NFT image"
               width={640}
@@ -84,10 +84,7 @@ const NFTDetailsImg = () => {
           description && (
             <div className={Style.NFTDetailsImg_box_description_box}>
               <p>
-                Tattooted Kitty Gang ("TKG") is a collection of 666 badass Kitty
-                gangsters, with symbol pf tattoos, living in the Proud Kitty Gang
-                ("PKG") metaverse. Each TKG is an 1/1 ID as gangster member & art
-                the joint rights.
+                {nft.description}
               </p>
             </div>
           )
@@ -105,11 +102,12 @@ const NFTDetailsImg = () => {
               <p>
                 <small>Contract Address</small>
                 <br></br>
-                0xBF883d8eBc778E91BB5B6e10C1da99839C26de71
+                {nft.seller}
               </p>
               <p>
                 <small>Token ID</small>
-                102384154
+                <br></br>
+                {nft.tokenId}
               </p>
           </div>
         )}

@@ -102,6 +102,13 @@
     align-items: center;
     gap: 1rem;
     line-height: 1;
+    padding-left: 2rem;
+}
+.NFTDescription_box_profile_box_left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    line-height: 1;
     border-left: 1px solid var(--icons-color);
     padding-left: 2rem;
 }
