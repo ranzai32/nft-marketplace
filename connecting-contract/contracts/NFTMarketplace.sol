@@ -2,7 +2,7 @@
 pragma solidity ^0.8.4;
 
 // --- Imports ---
-import "@openzeppelin/contracts/utils/Counters.sol"; // For safe counters
+import "./Counters.sol"; // For safe counters;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol"; // ERC721 with URI storage
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol"; // Base ERC721
 import "hardhat/console.sol"; // Hardhat logging utility

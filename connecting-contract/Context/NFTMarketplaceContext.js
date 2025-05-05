@@ -260,7 +260,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
             const provider = new JsonRpcProvider(rpcUrl);
             const contract = fetchContract(provider);
             if (!contract) throw new Error("Failed to fetch contract for fetching NFTs");
-            const data = await contract.fetchMarketItem();
+            const data = await contract.fetchMarketItems();
             const items = await Promise.all(
                 data.map(
                     async ({ tokenId, seller, owner, price: unformattedPrice }) => {
@@ -323,6 +323,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
             Router.push('/author');
         } catch (error) { console.error("Error buying NFT:", error); alert(`Purchase Failed: ${error?.reason || error?.message || "Unknown error"}`); }
     };
+
+    useEffect(()=>{
+        fetchNFTs();
+    }, []);
 
     // --- Provide Context Value ---
     return (
