@@ -246,10 +246,17 @@ const NFTDescription = ({ nft }) => {
               <Button 
                 icon=<FaPercentage /> 
                 btnName="Buy NFT" 
-                handleClick={() => {}}
+                handleClick={() => buyNFT(nft)}
                 classStyle={Style.button}  
               />
-            )};
+            )}
+
+            <Button 
+              icon=<FaPercentage /> 
+              btnName="Make Offer" 
+              handleClick={() => buyNFT(nft)}
+              classStyle={Style.button}  
+            />
           </div>
 
           <div className={Style.NFTDescription_box_profile_biding_box_tabs}>

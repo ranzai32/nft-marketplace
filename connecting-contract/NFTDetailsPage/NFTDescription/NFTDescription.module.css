@@ -178,6 +178,9 @@
     align-items: center;
     gap: 3rem;
 }
+.NFTDescription_box_profile_biding_box_button p {
+    font-size: 1rem;
+}
 
 .NFTDescription_box_profile_biding_box_tabs{
     margin-top: 3rem;

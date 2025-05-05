@@ -1,19 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Web3modal from 'web3modal';
-// Correctly import functions from ethers v6+
 import { ethers, Contract, parseUnits, formatUnits, JsonRpcProvider, BrowserProvider } from 'ethers';
 import Router from 'next/router';
-import axios from 'axios'; // Ensure axios is installed: npm install axios
+import axios from 'axios';
 
-// Assuming constants.js is in the same directory or adjust path
 import { NFTMarketplaceAddress, NFTMarketplaceABI } from './constants';
 
 // --- Pinata Configuration ---
-// Corrected: Use API Key / Secret from environment variables
 const pinataApiKey = process.env.NEXT_PUBLIC_PINATA_API_KEY || "";
 const pinataSecretApiKey = process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY || "";
-// Use your dedicated gateway URL from the .env file
-const pinataGatewayUrl = process.env.NEXT_PUBLIC_PINATA_GATEWAY_URL || "https://gateway.pinata.cloud"; // Fallback to public
+const pinataGatewayUrl = process.env.NEXT_PUBLIC_PINATA_GATEWAY_URL || "https://gateway.pinata.cloud";
 
 // --- Fetching contract ---
 const fetchContract = (signerOrProvider) => {
@@ -288,7 +284,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         try {
             const contract = await connectingWithSmartContract();
             if (!contract) throw new Error("Failed to connect to smart contract");
-            const data = type === "fetchItemsListed" ? await contract.fetchItemsListed() : await contract.fetchMyNFT();
+            const data = type === "fetchItemsListed" ? await contract.fetchItemsListed() : await contract.fetchMyNFTs();
             const items = await Promise.all(
                 data.map(async ({ tokenId, seller, owner, price: unformattedPrice }) => {
                     try {
@@ -308,8 +304,11 @@ export const NFTMarketplaceProvider = ({ children }) => {
         } catch (error) { console.error("Error fetching my/listed NFTs:", error); return []; }
     };
 
+    useEffect(()=> {
+        fetchMyNFTsOrListedNFTs()
+    }, []);
+
     // --- Buy NFT Function ---
-    // (No changes needed in this function)
     const buyNFT = async (nft) => {
         if (!nft || !nft.tokenId || !nft.price) { console.error("buyNFT Error: Invalid NFT object provided", nft); alert("Cannot buy NFT: Invalid data provided."); return; }
         try {

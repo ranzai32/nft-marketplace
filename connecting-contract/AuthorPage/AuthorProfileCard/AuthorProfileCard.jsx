@@ -9,7 +9,7 @@ import Style from './AuthorProfileCard.module.css'
 import images from '../../img'
 import { Button } from '../../components/componentsindex'
 
-const AuthorProfileCard = () => {
+const AuthorProfileCard = ({currentAccount}) => {
   const [share, setShare] = useState(false);
   const [report, setReport] = useState(false);
 
@@ -51,11 +51,11 @@ const AuthorProfileCard = () => {
 
         <div className={Style.AuthorProfileCard_box_info}>
           <h2>
-            Bobur Kurwa{""} <span><MdVerified/></span>{""}
+            Bruce Willis{""} <span><MdVerified/></span>{""}
           </h2>
 
           <div className={Style.AuthorProfileCard_box_info_address}>
-            <input type='text' value="0x7c851C11774bBa80b1286C9bfcd781DB863DDE1a" id="myInput"></input>
+            <input type='text' value={currentAccount} id="myInput"></input>
             <FiCopy 
               onClick={() => copyAddress()} 
               className={Style.AuthorProfileCard_box_info_address_icon}

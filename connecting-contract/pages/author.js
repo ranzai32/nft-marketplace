@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import Style from '../styles/author.module.css';
 import { Banner} from '../CollectionPage/collectionindex';
@@ -6,6 +6,8 @@ import { Brand, Title } from '../components/componentsindex';
 import images from '../img';
 import { AuthorProfileCard, AuthorTaps, AuthorNFTCardBox } from '../AuthorPage/authorIndex';
 import FollowerTabCard from '../components/FollowerTab/FollowerTabCard/FollowerTabCard';
+
+import { NFTMarketplaceContext } from '../Context/NFTMarketplaceContext';
 
 const author = () => {
   const popularArray = [
@@ -25,10 +27,30 @@ const author = () => {
   const [follower, setFollower] = useState(false);
   const [following, setFollowing] = useState(false);
 
+  const {fetchMyNFTsOrListedNFTs, fetchNFTs, currentAccount} = useContext(NFTMarketplaceContext);
+
+  const [nfts, setNfts] = useState([]);
+  const [myNFTs, setMyNFTs] = useState([]);
+
+  useEffect(() => {
+    const loadNFTs = async () => {
+      const items = await fetchNFTs();
+      console.log("Fetched NFTs:", items);
+      setNfts(items);
+    };
+    loadNFTs();
+  }, []);
+  
+  useEffect(() => {
+    fetchMyNFTsOrListedNFTs("fetchMyNFTs").then((items) => {
+      console.log("Fetched My NFTs:", items);
+      setMyNFTs(items);
+    });
+  }, []);
   return (
     <div className={Style.author}>
       <Banner bannerImage={images.creatorbackground3} />
-      <AuthorProfileCard />
+      <AuthorProfileCard currentAccount={currentAccount}/>
       <AuthorTaps
         setCollectiables={setCollectiables}
         setCreated={setCreated}
@@ -43,6 +65,8 @@ const author = () => {
         like={like}
         follower={follower}
         following={following}
+        nfts={nfts}
+        myNFTs={myNFTs}
       />
 
       <Title heading="Popular Creators" paragraph="Click on NFT music or audio"/>
