@@ -56,4 +56,4 @@ const CollectionProfile = () => {
   )
 }
 
-export default CollectionProfile
+export default CollectionProfile;
