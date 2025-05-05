@@ -77,7 +77,7 @@ const UploadNFT = ({uploadToIPFS, createNFT}) => {
             type='text' 
             placeholder='Abraham Lincoln' 
             className={formStyle.Form_box_input_username}
-            onChange={(e) =>  setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           ></input>
         </div>
 
@@ -193,11 +193,35 @@ const UploadNFT = ({uploadToIPFS, createNFT}) => {
         </div>
 
         <div className={Style.upload_box_btn}>
-          <Button 
-            btnName="Upload" 
-            handleClick={async() => createNFT(name, price, image, description, router, website, royalties, fileSize, category, properties)} 
+          <Button
+            btnName="Upload"
+            handleClick={async () => {
+              if (!image) {
+                alert("Please upload an image first.");
+                return;
+              }
+              const formInput = {
+                name,
+                price,
+                description,
+                website,
+                royalties,
+                fileSize,
+                category,
+                properties,
+              };
+              try {
+                  console.log("Calling createNFT with:", formInput, image, router);
+                  await createNFT(formInput, image, router);
+              } catch (error) {
+                  console.error("Error during createNFT call from UploadNFT:", error);
+                  alert("An error occurred while creating the NFT. Check the console.");
+              }
+            }}
             className={Style.upload_box_btn_style}
           />
+
+
           <Button btnName="Review" handleClick={() => {}} className={Style.upload_box_btn_style}/>
         </div>
       </div>

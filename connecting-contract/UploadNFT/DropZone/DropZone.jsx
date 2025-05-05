@@ -3,21 +3,29 @@ import { useDropzone } from 'react-dropzone';
 import Image from 'next/image';
 
 import Style from './DropZone.module.css';
-import images from '../../img'
+import images from '../../img';
 
-const DropZone = ({ title, heading, subHeading, itemName: name,
+const DropZone = ({ title, heading, subHeading, name,
         website, description, royalties, fileSize,
         category, properties, setImage, uploadToIPFS }) => {
   const [fileUrl, setFileUrl] = useState(false);
   
-  const onDrop = useCallback(async(acceptedFile) => {
-    const url = uploadToIPFS(acceptedFile[0]);
-    setFileUrl(url);
-    setImage(url);
-  });
+  const onDrop = useCallback(async (acceptedFile) => {
+    try {
+      const url = await uploadToIPFS(acceptedFile[0]);
+      console.log("Uploaded file URL:", url); 
+      setFileUrl(url);
+      setImage(url);
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+  }, [setImage, uploadToIPFS]);
+  
+  
+  
   const {getRootProps, getInputProps} = useDropzone({
     onDrop,
-    accept: "image/*",
+    accept: { 'image/png': ['.png'], 'image/jpeg': ['.jpg', '.jpeg'] },
     maxSize: 5000000,
   });
   return (
