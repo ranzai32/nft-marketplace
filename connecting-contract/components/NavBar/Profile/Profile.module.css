@@ -37,3 +37,12 @@
     color: var(--shadow-dark-color);
     border-radius: .3rem;
 }
+
+.profile_menu_one_item_theme{
+    display: flex;
+    align-items: center;
+    padding: 0rem 1.5rem;
+    gap: 2rem;
+    margin-top: 1rem;
+    transition: all .3s ease-in;
+}
