@@ -7,7 +7,6 @@ import Style from './Form.module.css'
 import {Button} from '../components/componentsindex'
 
 const Form = () => {
-  
   return (
     <div className={Style.Form}>
       <div className={Style.Form_box}>

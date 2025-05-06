@@ -5,6 +5,7 @@
 
 .Form_box_input{
     margin-top: 2rem;
+    color: var(--icons-color);
 }
 
 .Form_box_input label{
@@ -21,6 +22,7 @@
     border-radius: 1rem;
     margin-top: .5rem;
     border: 1px solid var(--icons-color);
+    color: var(--icons-color);
     background-color: transparent;
     outline: none;
 }
@@ -53,6 +55,7 @@
     border: 0;
     background-color: transparent;
     outline: none;
+    color: var(--icons-color);
 }
 
 .Form_box_input textarea{
@@ -61,6 +64,7 @@
     border-radius: 1rem;
     background-color: transparent;
     outline: none;
+    color: var(--icons-color);
 }
 
 .Form_box_input_social{

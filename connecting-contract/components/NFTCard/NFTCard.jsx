@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
-import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai'
-import {BsImages} from 'react-icons/bs'
-import Image from 'next/image'
+import React, {useState} from 'react';
+import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai';
+import {BsImages} from 'react-icons/bs';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import Style from './NFTCard.module.css'
-import images from '../../img'
+import Style from './NFTCard.module.css';
+import images from '../../img';
 
 const NFTCard = ({NFTData}) => {
   /*const featureArray = [
@@ -25,6 +26,7 @@ const NFTCard = ({NFTData}) => {
   return (
     <div className={Style.NFTCard}>
       {NFTData.map((element, index) => (
+        <Link href={{pathname: "/nft-details", query: element}}>
           <div className={Style.NFTCard_box} key={index + 1}>
             <div className={Style.NFTCard_box_img}>
               <Image src={element.image} alt="NFT images" width={600} height={600} className={Style.NFTCard_box_img_img}/>
@@ -67,7 +69,7 @@ const NFTCard = ({NFTData}) => {
               </div>
             </div>
           </div>
-
+        </Link>
       ))};
     </div>
   )

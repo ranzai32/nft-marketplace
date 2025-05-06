@@ -14,6 +14,7 @@ import { HeroSection,
          Slider,
          Brand,
          Video,
+         Loader,
 } from '../components/componentsindex'
 
 import { NFTMarketplaceContext } from '../Context/NFTMarketplaceContext'
@@ -47,7 +48,10 @@ const Home = () => {
       <Collection />
       <Title heading='Featurerd NFTs' paragraph='Discover the most outstanding NFTs in all topics of life'/>
       <Filter />
-      <NFTCard NFTData={nfts}/>
+      {nfts.length == 0 ? 
+        <Loader /> :
+        <NFTCard NFTData={nfts}/>
+      }
       <Title heading='Browse by category' paragraph='Explore the NFTs in the most featured categories.'/>
       <Category />
       <Subscribe />

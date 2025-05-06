@@ -4,6 +4,7 @@ import Style from './AuthorNFTCardBox.module.css'
 import images from '../../img'
 import { NFTCardTwo } from '../../CollectionPage/collectionindex'
 import FollowerTabCard from '../../components/FollowerTab/FollowerTabCard/FollowerTabCard'
+import { Loader } from '@/components/componentsindex'
 
 const AuthorNFTCardBox = ({collectiables, created, like, follower, following, nfts, myNFTs}) => {
     //const collectiablesArray = [
@@ -51,8 +52,11 @@ const AuthorNFTCardBox = ({collectiables, created, like, follower, following, nf
     return (
         <div className={Style.AuthorNFTCardBox}>
             {collectiables && (
-                <NFTCardTwo NFTData={nfts || []}/>
-            )}
+                (!nfts || nfts.length === 0) ?
+                    <Loader /> :
+                    <NFTCardTwo NFTData={nfts} />
+                )
+            }
             {created && (
                 <NFTCardTwo NFTData={myNFTs || []}/>
             )}
