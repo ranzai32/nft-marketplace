@@ -236,9 +236,9 @@ const NFTDescription = ({ nft }) => {
           </div>
 
           <div className={Style.NFTDescription_box_profile_biding_box_button}>
-            {currentAccount == nft.seller.toLowerCase() ? (
+            {currentAccount === nft.seller?.toLowerCase() ? (
               <p>You cannot buy you own NFT</p>
-            ) : currentAccount == nft.owner.toLowerCase() ? (
+            ) : currentAccount === nft.owner?.toLowerCase() ? (
               <Button 
                 icon=<FaWallet /> 
                 btnName="List on Marketplace" 
