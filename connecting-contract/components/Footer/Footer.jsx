@@ -7,12 +7,16 @@ import Style from './Footer.module.css'
 import images from '../../img'
 import { Discover, HelpCenter} from '../NavBar'
 
+import { useTheme } from '../../Context/ThemeContext';
+
 const Footer = () => {
+  const { theme } = useTheme();
+
   return (
     <div className={Style.footer}>
       <div className={Style.footer_box}>
         <div className={Style.footer_box_social}>
-          <Image src={images.logo} alt="footer logo" height={40} width={100} className={Style.footer_box_social_img}/>
+          <Image src={theme === 'light' ? images.logo : images.logoLight} alt="footer logo" height={40} width={100} className={Style.footer_box_social_img}/>
           <p>
             One of the greatest Non Fungible Token (NFT) marketplaces, where you can buy and sell NFTs. Buy, sell, and create exclusive digital items together!
           </p>

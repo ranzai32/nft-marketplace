@@ -12,6 +12,7 @@ import {Button} from '../componentsindex';
 import images from '../../img';
 
 import {NFTMarketplaceContext} from '../../Context/NFTMarketplaceContext';
+import { useTheme } from '../../Context/ThemeContext';
 
 const NavBar = () => {
   const [discover, setDiscover] = useState(false);
@@ -81,12 +82,14 @@ const NavBar = () => {
   }
 
   const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
+  const { theme } = useTheme();
+
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo} onClick={() => {router.push("/")}}>
-            <Image src={images.logo} alt="NFT Marketplace" width={120} height={48} className={Style.logo_img}/>
+            <Image src={theme === 'light' ? images.logo : images.logoLight} alt="NFT Marketplace" width={120} height={48} className={Style.logo_img}/>
           </div>
           <div className={Style.navbar_container_left_input}>
             <div className={Style.navbar_container_left_input_box}>

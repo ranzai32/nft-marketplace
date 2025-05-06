@@ -3,10 +3,12 @@ import Image from 'next/image';
 import { FaUserAlt, FaRegImage, FaUserEdit } from 'react-icons/fa';
 import { MdHelpCenter } from 'react-icons/md';
 import { TbDownloadOff } from 'react-icons/tb';
+import Link from 'next/link';
 
 import Style from './Profile.module.css';
 import images from '../../../img';
-import Link from 'next/link';
+import ThemeToggleButton from '../../ThemeToggleButton/ThemeToggleButton';
+
 
 {/*import { NFTMarketplaceContext } from '../../../Context/NFTMarketplaceContext';*/}
 
@@ -62,6 +64,9 @@ const Profile = ({ currentAccount }) => {
             <p>
               <Link href={{pathname: '/disconnect'}}>Disconnect</Link>
             </p>
+          </div>
+          <div className={Style.profile_menu_one_item_theme}>
+            <ThemeToggleButton />
           </div>
         </div>
       </div>
