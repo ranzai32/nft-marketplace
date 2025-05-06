@@ -18,7 +18,7 @@ const searchPage = () => {
             setNfts(item.reverse());
             setNftsCopy(item);
         })
-    }, [])  
+    }, []);
 
     // const collectionArray = [
     //     images.nft_image_1,
@@ -33,13 +33,13 @@ const searchPage = () => {
     // ];
 
     const onHandleSearch = (searchValue) => {
-      console.log("Search triggered with:", searchValue); // ✅ Check if triggered
+      console.log("Search triggered with:", searchValue);
       const filteredNFTs = nftsCopy.filter((nft) => {
-          console.log("Checking NFT:", nft.name); // ✅ See what's being checked
+          console.log("Checking NFT:", nft.name);
           return nft.name?.toLowerCase().includes(searchValue.toLowerCase());
       });
   
-      console.log("Filtered NFTs:", filteredNFTs); // ✅ Check result
+      console.log("Filtered NFTs:", filteredNFTs);
   
       if (filteredNFTs.length === 0) {
           setNfts(nftsCopy);
@@ -68,4 +68,4 @@ const searchPage = () => {
   )
 }
 
-export default searchPage
+export default searchPage;

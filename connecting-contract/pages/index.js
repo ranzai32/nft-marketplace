@@ -17,13 +17,23 @@ import { HeroSection,
 } from '../components/componentsindex'
 
 import { NFTMarketplaceContext } from '../Context/NFTMarketplaceContext'
-import { check } from 'prettier'
 
 const Home = () => {
-  const { checkIfWalletConnected } = useContext(NFTMarketplaceContext);
+  const { checkIfWalletConnected, fetchNFTs } = useContext(NFTMarketplaceContext);
+  
+  const [nfts, setNfts] = useState([]);
+  const [nftsCopy, setNftsCopy] = useState([]);
+
   useEffect(() => {
     checkIfWalletConnected();
   }, []);
+      
+  useEffect(() => {
+    fetchNFTs().then((item) => {
+      setNfts(item.reverse());
+      setNftsCopy(item);
+    })
+  }, [])  
 
   return (
     <div className={Style.homePage}>
@@ -37,7 +47,7 @@ const Home = () => {
       <Collection />
       <Title heading='Featurerd NFTs' paragraph='Discover the most outstanding NFTs in all topics of life'/>
       <Filter />
-      <NFTCard />
+      <NFTCard NFTData={nfts}/>
       <Title heading='Browse by category' paragraph='Explore the NFTs in the most featured categories.'/>
       <Category />
       <Subscribe />

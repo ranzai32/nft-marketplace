@@ -114,6 +114,11 @@ export const NFTMarketplaceProvider = ({ children }) => {
         }
     };
 
+    const disconnectWallet = () => {
+        setCurrentAccount('');
+      };
+    
+
     // --- Upload File to IPFS (Pinata) Function using API Key/Secret ---
     const uploadToIPFS = async (file) => {
         if (!file) return console.error("No file provided for IPFS upload");
@@ -333,6 +338,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
                 fetchMyNFTsOrListedNFTs,
                 buyNFT,
                 currentAccount,
+                disconnectWallet,
                 titleData,
             }}
         >
@@ -340,3 +346,4 @@ export const NFTMarketplaceProvider = ({ children }) => {
         </NFTMarketplaceContext.Provider>
     );
 };
+export default NFTMarketplaceContext;

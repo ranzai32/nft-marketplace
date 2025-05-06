@@ -21,6 +21,10 @@
     grid-template-columns: 1fr 2fr;
     align-items: center;
 }
+
+.logo{
+    cursor: pointer;
+}
 .logo_img{
     margin: 20px 0;
 }

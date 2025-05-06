@@ -6,11 +6,11 @@ import Image from 'next/image'
 import Style from './NFTCard.module.css'
 import images from '../../img'
 
-const NFTCard = () => {
-  const featureArray = [
+const NFTCard = ({NFTData}) => {
+  /*const featureArray = [
     images.nft_image_1, images.nft_image_2, images.nft_image_3,
     images.nft_image_1, images.nft_image_2, images.nft_image_3,
-  ];
+  ];*/
 
   const [like, setLike] = useState(true);
 
@@ -24,10 +24,10 @@ const NFTCard = () => {
 
   return (
     <div className={Style.NFTCard}>
-      {featureArray.map((element, index) => (
+      {NFTData.map((element, index) => (
           <div className={Style.NFTCard_box} key={index + 1}>
             <div className={Style.NFTCard_box_img}>
-              <Image src={element} alt="NFT images" width={600} height={600} className={Style.NFTCard_box_img_img}/>
+              <Image src={element.image} alt="NFT images" width={600} height={600} className={Style.NFTCard_box_img_img}/>
             </div>
 
             <div className={Style.NFTCard_box_update}>
@@ -49,11 +49,11 @@ const NFTCard = () => {
             <div className={Style.NFTCard_box_update_details}>
               <div className={Style.NFTCard_box_update_details_price}>
                 <div className={Style.NFTCard_box_update_details_price_box}>
-                  <h4>Clone #1749</h4>
+                  <h4>{element.name} #{element.tokenId}</h4>
                   <div className={Style.NFTCard_box_update_details_price_box_box}>
                     <div className={Style.NFTCard_box_update_details_price_box_bid}>
                       <small>Current BID</small>
-                      <p>1.000 ETH</p>
+                      <p>{element.price} ETH</p>
                     </div>
                     <div className={Style.NFTCard_box_update_details_price_box_stock}>
                       <small>61 in stock</small>

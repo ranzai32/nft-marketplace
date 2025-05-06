@@ -1,14 +1,17 @@
-import React from 'react'
-import Image from 'next/image'
-import { FaUserAlt, FaRegImage, FaUserEdit } from 'react-icons/fa'
-import { MdHelpCenter } from 'react-icons/md'
-import { TbDownloadOff } from 'react-icons/tb'
+import React, {useContext, useState, useEffect} from 'react';
+import Image from 'next/image';
+import { FaUserAlt, FaRegImage, FaUserEdit } from 'react-icons/fa';
+import { MdHelpCenter } from 'react-icons/md';
+import { TbDownloadOff } from 'react-icons/tb';
 
-import Style from './Profile.module.css'
-import images from '../../../img'
-import Link from 'next/link'
+import Style from './Profile.module.css';
+import images from '../../../img';
+import Link from 'next/link';
 
-const Profile = () => {
+{/*import { NFTMarketplaceContext } from '../../../Context/NFTMarketplaceContext';*/}
+
+const Profile = ({ currentAccount }) => {
+  {/*const { disconnectWallet } = useContext(NFTMarketplaceContext);*/}
   return (
     <div className={Style.profile}>
       <div className={Style.profile_account}>
@@ -21,7 +24,7 @@ const Profile = () => {
 
         <div className={Style.profile_account_info}>
           <p>Ruslan Zhulduzbayev</p>
-          <small>X099931131...</small>
+          <small>{currentAccount.slice(0, 18)}...</small>
         </div>
       </div>
 
@@ -30,19 +33,19 @@ const Profile = () => {
           <div className={Style.profile_menu_one_item}>
             <FaUserAlt/>
             <p>
-              <Link href={{pathname: '/myprofile'}}>My Profile</Link>
+              <Link href={{pathname: '/author'}}>My Profile</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <FaRegImage/>
             <p>
-              <Link href={{pathname: '/myprofile'}}>My Items</Link>
+              <Link href={{pathname: '/author'}}>My Items</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <FaUserEdit/>
             <p>
-              <Link href={{pathname: '/myprofile'}}>Edit Profile</Link>
+              <Link href={{pathname: '/account'}}>Edit Profile</Link>
             </p>
           </div>
         </div>
@@ -51,10 +54,10 @@ const Profile = () => {
           <div className={Style.profile_menu_one_item}>
             <MdHelpCenter/>
             <p>
-              <Link href={{pathname: '/help'}}>Help</Link>
+              <Link href={{pathname: '/contactUs'}}>Help</Link>
             </p>
           </div>
-          <div className={Style.profile_menu_one_item}>
+          <div className={Style.profile_menu_one_item}>{/*onClick={disconnectWallet}*/}
             <TbDownloadOff/>
             <p>
               <Link href={{pathname: '/disconnect'}}>Disconnect</Link>
@@ -66,4 +69,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Profile;
