@@ -92,7 +92,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
                  else setCurrentAccount("");
             };
             window.ethereum.on('accountsChanged', handleAccountsChanged);
-            // Cleanup listener on unmount
             return () => {
                 if (window.ethereum.removeListener) {
                      window.ethereum.removeListener('accountsChanged', handleAccountsChanged);
@@ -118,7 +117,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
     // --- Upload File to IPFS (Pinata) Function using API Key/Secret ---
     const uploadToIPFS = async (file) => {
         if (!file) return console.error("No file provided for IPFS upload");
-        // Check for API Key/Secret
         if (!pinataApiKey || !pinataSecretApiKey) {
             console.error("Pinata API Key or Secret is missing. Check environment variables.");
             alert("IPFS configuration error (API Key/Secret). Please contact support.");
@@ -158,7 +156,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
     // --- Upload JSON Metadata to IPFS (Pinata) using API Key/Secret ---
     const uploadMetadataToIPFS = async (jsonData) => {
         if (!jsonData) return console.error("No JSON data provided for IPFS upload");
-         // Check for API Key/Secret
          if (!pinataApiKey || !pinataSecretApiKey) {
             console.error("Pinata API Key or Secret is missing. Check environment variables.");
             alert("IPFS configuration error (API Key/Secret). Please contact support.");
@@ -192,7 +189,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
 
     // --- Create NFT Function ---
-    // (No changes needed in this function itself, it calls the updated upload function)
     const createNFT = async (formInput, fileUrl, router) => {
         const { name, description, price } = formInput;
         let missingFields = [];
@@ -223,7 +219,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
     };
 
     // --- Create Sale Function ---
-    // (No changes needed in this function)
     const createSale = async (tokenURI, formInputPrice, isReselling, id) => {
         if (!tokenURI || !formInputPrice) {
             console.error("createSale Error: Missing tokenURI or price");
@@ -237,7 +232,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
             const listingPrice = await contract.getListingPrice();
             const transaction = !isReselling
                 ? await contract.createToken(tokenURI, price, { value: listingPrice.toString() })
-                : await contract.reSellToken(id, price, { value: listingPrice.toString() });
+                : await contract.resellToken(id, price, { value: listingPrice.toString() });
             alert("Transaction sent! Waiting for confirmation...");
             await transaction.wait();
             alert("NFT Listed Successfully!");
@@ -249,7 +244,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
     };
 
     // --- Fetch NFTs Function ---
-    // (No changes needed in this function, but ensure gateway URL is correct)
     const fetchNFTs = async () => {
         try {
             const rpcUrl = process.env.NEXT_PUBLIC_RPC_URL || "http://localhost:8545";
@@ -279,7 +273,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
     };
 
     // --- Fetch My NFTs or Listed NFTs Function ---
-    // (No changes needed in this function, but ensure gateway URL is correct)
     const fetchMyNFTsOrListedNFTs = async (type) => {
         try {
             const contract = await connectingWithSmartContract();
@@ -327,7 +320,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         fetchNFTs();
     }, []);
 
-    // --- Provide Context Value ---
+    // --- Providing Context Value ---
     return (
         <NFTMarketplaceContext.Provider
             value={{
@@ -335,6 +328,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
                 connectWallet,
                 uploadToIPFS,
                 createNFT,
+                createSale,
                 fetchNFTs,
                 fetchMyNFTsOrListedNFTs,
                 buyNFT,
