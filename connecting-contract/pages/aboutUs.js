@@ -17,11 +17,6 @@ const aboutUs = () => {
             position: "CEO and co-founder",
             image: images.founder2
         },
-        {
-            name: "Alinur Anatolyev",
-            position: "CEO and co-founder",
-            image: images.founder3
-        },
     ];
     const factsArray = [
         {
