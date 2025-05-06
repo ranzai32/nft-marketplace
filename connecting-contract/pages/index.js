@@ -1,5 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react'
-import Style from '../styles/index.module.css'
+import React, { useState, useContext, useEffect } from 'react';
+
+import Style from '../styles/index.module.css';
 import { HeroSection,
          Service,
          BigNFTSilder,
@@ -15,15 +16,18 @@ import { HeroSection,
          Brand,
          Video,
          Loader,
-} from '../components/componentsindex'
+} from '../components/componentsindex';
+import { getTopCreators } from '@/TopCreators/TopCreators';
 
-import { NFTMarketplaceContext } from '../Context/NFTMarketplaceContext'
+import { NFTMarketplaceContext } from '../Context/NFTMarketplaceContext';
 
 const Home = () => {
   const { checkIfWalletConnected, fetchNFTs } = useContext(NFTMarketplaceContext);
   
   const [nfts, setNfts] = useState([]);
   const [nftsCopy, setNftsCopy] = useState([]);
+
+  const creators = getTopCreators(nfts);
 
   useEffect(() => {
     checkIfWalletConnected();
@@ -43,7 +47,11 @@ const Home = () => {
       <BigNFTSilder />
       <Title heading='Audio Collection' paragraph='Discover the most outstanding NFTs in all topics of life'/>
       <AudioLive />
-      <FollowerTab />
+      {creators.length == 0 ? 
+        <Loader /> : 
+        <FollowerTab creators={creators}/>
+      }
+
       <Slider />
       <Collection />
       <Title heading='Featurerd NFTs' paragraph='Discover the most outstanding NFTs in all topics of life'/>

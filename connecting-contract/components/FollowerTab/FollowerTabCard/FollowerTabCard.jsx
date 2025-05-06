@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
-import Image from 'next/image'
-import { MdVerified } from 'react-icons/md'
-import {TiTick} from 'react-icons/ti'
+import React, {useState} from 'react';
+import Image from 'next/image';
+import { MdVerified } from 'react-icons/md';
+import {TiTick} from 'react-icons/ti';
+import Link from 'next/link';
 
-import Style from './FollowerTabCard.module.css'
-import images from '../../../img'
+import Style from './FollowerTabCard.module.css';
+import images from '../../../img';
 
 const FollowerTabCard = ({ index, element }) => {
   const [following, setFollowing] = useState(false);
@@ -16,6 +17,7 @@ const FollowerTabCard = ({ index, element }) => {
       setFollowing(false);
     }
   }
+  const profileLink = element.seller ? `/author?address=${element.seller}` : '#';
   return (
     <div className={Style.FollowerTabCard}>
       <div className={Style.FollowerTabCard_rank}>
@@ -28,7 +30,7 @@ const FollowerTabCard = ({ index, element }) => {
         <div className={Style.FollowerTabCard_box_img}>
           <Image 
             className={Style.FollowerTabCard_box_img_img} 
-            src={element.background} 
+            src={element.background || images.creatorbackground2} 
             alt='profile background' 
             width={250} height={150} 
             objectFit='cover'
@@ -40,19 +42,21 @@ const FollowerTabCard = ({ index, element }) => {
             className={Style.FollowerTabCard_box_profile_img} 
             alt='profile picture' 
             width={50} height={50}
-            src={element.user}
+            src={element.user || images.user1}
           />
         </div>
 
         <div className={Style.FollowerTabCard_box_info}>
           <div className={Style.FollowerTabCard_box_info_name}>
-            <h4>
-              Chill Man{""} 
-              <span>
-                <MdVerified/>
-              </span>
-            </h4>
-            <p>12.3 ETH</p>
+            <Link href={profileLink}>
+              <h4>
+                {element.seller.slice(0, 9)}{""} 
+                <span>
+                  <MdVerified/>
+                </span>
+              </h4>
+            </Link>
+            <p>{element.total || 0} ETH</p>
           </div>
 
           <div className={Style.FollowerTabCard_box_info_following}>
