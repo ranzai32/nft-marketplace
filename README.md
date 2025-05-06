@@ -1,4 +1,5 @@
 # "Artify" NFT Marketplace from Alikhan, Maksim, Alinur
+![Artify logo](connecting-contract/img/logo.png)
 
 ## Description
 This project is a decentralized NFT (Non-Fungible Token) marketplace built using modern web3 technologies. It allows users to connect their wallets, browse NFTs, create new NFTs (minting them on the blockchain), list them for sale, and purchase NFTs from other users. The project utilizes the Hardhat local network for smart contract deployment and interaction during development, Next.js for the user interface, and Pinata/IPFS for storing NFT metadata and assets off-chain.
@@ -79,6 +80,8 @@ npm run dev
 ```
 
 **Connect Wallet:**
+
+![Artify logo](connecting-contract/img/provider-1.png)
 
 Make sure your MetaMask wallet is installed and unlocked in the browser.
 Ensure MetaMask is connected to the Localhost 8545 network (Network ID: 31337). If it's not present, you may need to add it manually in MetaMask's network settings.
