@@ -48,7 +48,7 @@ smart-contract:
   permalink: /smart-contract
   description: SmartContract tag
 
-NextJs:
+Next.js:
   label: Next.js
   permalink: /next
   description: Next.js tag
