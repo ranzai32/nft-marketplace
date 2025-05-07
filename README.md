@@ -1,4 +1,4 @@
-# "Artify" NFT Marketplace from Alikhan, Maksim, Alinur
+# "Artify" NFT Marketplace from Maksim, Alikhan.
 ![Artify logo](connecting-contract/img/logo.png)
 
 ## Description
