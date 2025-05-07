@@ -1,7 +1,8 @@
 {
   "label": "Tutorial - IPFS(pinata)",
-  "position": 4,
+  "position": 3,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "Tutorial on how to configure your own IPFS",
   }
 }
