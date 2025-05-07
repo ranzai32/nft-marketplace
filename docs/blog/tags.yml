@@ -58,7 +58,7 @@ front:
   permalink: /front
   description: Front tag
 
-front:
+theme:
   label: theme
   permalink: /theme
   description: Theme tag

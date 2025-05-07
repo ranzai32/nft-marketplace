@@ -9,7 +9,7 @@ import { NFTMarketplaceAddress, NFTMarketplaceABI } from './constants';
 const pinataApiKey = process.env.NEXT_PUBLIC_PINATA_API_KEY || "";
 const pinataSecretApiKey = process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY || "";
 const pinataGatewayUrl = process.env.NEXT_PUBLIC_PINATA_GATEWAY_URL || "https://gateway.pinata.cloud";
-const explorerBaseUrl = process.env.NEXT_PUBLIC_EXPLORER_BASE_URL || "https://etherscan.io"; // Пример, замените на эксплорер вашей сети
+const explorerBaseUrl = process.env.NEXT_PUBLIC_EXPLORER_BASE_URL || "https://etherscan.io";
 
 const fetchContract = (signerOrProvider) => {
     if (!NFTMarketplaceABI || !NFTMarketplaceAddress) {
