@@ -17,3 +17,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+nft:
+  label: nft
+  permalink: /nft
+  description: NFT tag description

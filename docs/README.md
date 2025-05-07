@@ -1,41 +1,51 @@
-# Website
+# Artify NFT Marketplace - Documentation Site
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This directory (`/docs`) contains the source files for the Artify NFT Marketplace documentation website. The site is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+
+## Getting Started with the Documentation Site
+
+Follow these instructions to set up and run the documentation site locally.
+
+### Prerequisites
+
+* Node.js (v18 or later recommended)
+* npm (v8 or later recommended, comes with Node.js)
+* Git
 
 ### Installation
 
-```
-$ yarn
-```
+If the `/docs` directory already contains a Docusaurus project (you see `docusaurus.config.js`, `package.json`, etc.), navigate into it and install the dependencies:
+
+1.  **Navigate to the `docs` directory:**
+    ```sh
+    cd docs
+    ```
+2.  **Install Dependencies:**
+    ```sh
+    npm install
+    ```
 
 ### Local Development
 
-```
-$ yarn start
-```
+To start the Docusaurus development server:
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+1.  **Ensure you are in the `docs` directory.**
+2.  **Run the start command:**
+    ```sh
+    npm start
+    ```
+    This command typically starts a local development server (usually on `http://localhost:3000` or the next available port) and opens it in your browser. Most changes you make to the documentation files (in Markdown, etc.) will be reflected live.
 
 ### Build
 
-```
-$ yarn build
-```
+To generate a static, production-ready build of the documentation website:
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+1.  **Ensure you are in the `docs` directory.**
+2.  **Run the build command:**
+    ```sh
+    npm run build
+    ```
+    *(This assumes you have a `build` script in your `docs/package.json` that executes `docusaurus build`)*.
 
-### Deployment
+    This command generates static HTML, CSS, and JavaScript files into the `build` directory (i.e., `docs/build`). These files can then be deployed to any static content hosting service.
 
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
