@@ -4,6 +4,10 @@
 ## Description
 This project is a decentralized NFT (Non-Fungible Token) marketplace built using modern web3 technologies. It allows users to connect their wallets, browse NFTs, create new NFTs (minting them on the blockchain), list them for sale, and purchase NFTs from other users. The project utilizes the Hardhat local network for smart contract deployment and interaction during development, Next.js for the user interface, and Pinata/IPFS for storing NFT metadata and assets off-chain.
 
+## Documentation
+    Detailed documentation of the project can be found at the link below:
+    https://documentation-blush-ten.vercel.app/
+
 ## Features
 - Connect Ethereum wallets (e.g., MetaMask).
 - Browse listed NFTs on the marketplace.
