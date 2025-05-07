@@ -49,7 +49,6 @@ import provider2 from "./provider-2.png";
 import provider3 from "./provider-3.png";
 import founder1 from "./founder-1.png";
 import founder2 from "./founder-2.png";
-import founder3 from "./founder-3.png";
 import loadergif from "./loadergif.gif"
 
 export default {
@@ -104,6 +103,5 @@ export default {
   provider3,
   founder1,
   founder2,
-  founder3,
   loadergif,
 };

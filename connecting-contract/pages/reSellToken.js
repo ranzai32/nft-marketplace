@@ -14,7 +14,7 @@ const reSellToken = () => {
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
   const router = useRouter();
-  const { id, tokenURI } = router.query;
+  const { tokenId, tokenURI } = router.query;
 
   const fetchNFT = async () => {
     if (!tokenURI) return;
@@ -37,7 +37,7 @@ const reSellToken = () => {
 
   const resell = async () => {
     try {
-      await createSale(tokenURI, price, true, id);
+      await createSale(tokenURI, price, true, tokenId);
       router.push("/author");
     } catch (error) {
       console.log("Error while resell", error);
