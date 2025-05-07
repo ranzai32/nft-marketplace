@@ -1,12 +1,13 @@
 ---
 sidebar_position: 1
+tags: [pinata, IPFS, storage]
 ---
 
 # Pinata Setup Guide
 
 This guide will walk you through creating the necessary API credentials and finding your dedicated gateway URL on Pinata for storing your NFT assets and metadata on IPFS.
 
-For more info you can check official Pinata documentation: `https://docs.pinata.cloud/quickstart`
+For more info you can check official Pinata documentation: [https://docs.pinata.cloud/quickstart](https://docs.pinata.cloud/quickstart).
 
 ## Prerequisites
 

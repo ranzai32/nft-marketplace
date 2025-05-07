@@ -1,8 +1,8 @@
 {
-  "label": "Tutorial - Front(Next.js)",
+  "label": "Frontend Documentation",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Documentation for the Artify NFT Marketplace frontend."
   }
 }

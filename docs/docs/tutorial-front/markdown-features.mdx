@@ -1,152 +1,95 @@
 ---
-sidebar_position: 4
+sidebar_label: 'Frontend Overview'
+title: 'Artify Frontend Architecture Overview'
+sidebar_position: 1
 ---
 
-# Markdown Features
+Welcome to the documentation section dedicated to the frontend of the "Artify" NFT Marketplace! This document will provide you with a general overview of our architecture, the technologies used, and the project structure.
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+## Introduction
 
-## Front Matter
+The "Artify" frontend is designed to provide an intuitive, responsive, and functional user interface. Our goal is to make the process of interacting with the world of NFTs as simple and enjoyable as possible for both newcomers and experienced users. We aim to create a platform where everyone can easily browse, create, buy, and sell digital assets.
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
+## Core Technologies
 
-```text title="my-doc.md"
-// highlight-start
----
-id: my-doc-id
-title: My document title
-description: My document description
-slug: /my-custom-url
----
-// highlight-end
+To build the frontend, we have chosen a stack of modern and time-tested technologies:
 
-## Markdown heading
+* **[Next.js](https://nextjs.org/):** A React framework that provides us with features such as Server-Side Rendering (SSR), Static Site Generation (SSG), image optimization, file-system routing, and much more. This allows us to create fast and SEO-friendly web applications.
+* **[React](https://react.dev/):** The foundation of our user interface. We use a component-based approach to create reusable and easily manageable UI parts.
+* **[Ethers.js (v6+)](https://docs.ethers.org/):** A powerful library for interacting with the Ethereum blockchain. We use it to connect to users' wallets, send transactions, and read data from our smart contracts.
+* **[Web3Modal](https://github.com/WalletConnect/web3modal):** A convenient tool for providing users with a choice of various crypto wallets (e.g., MetaMask) to connect to our application.
+* **[Axios](https://axios-http.com/):** A Promise-based HTTP client for interacting with external APIs, particularly the Pinata API for uploading files to IPFS.
+* **CSS Modules:** For component styling, we use CSS Modules, which allows for style encapsulation and avoids class name conflicts. Global styles and theme variables are defined in `styles/globals.css`.
+* **IPFS (via Pinata):** For decentralized storage of NFT metadata and images, we use IPFS, interacting with it through the Pinata service API.
 
-Markdown text with [links](./hello.md)
-```
+## Architecture and Project Structure
 
-## Links
+The frontend part of our "Artify" project (located in the root `connecting-contract` folder) has the following main structure:
 
-Regular Markdown links are supported, using url paths or relative file paths.
+* **`/pages`**: This section provides a brief description of each page.
 
-```md
-Let's see how to [Create a page](/create-a-page).
-```
+    * **`_app.js`**: This is the main application shell. It's used by Next.js to initialize pages. Here, we wrap all page components with global layouts (like `NavBar` and `Footer`) and provide global context (such as `NFTMarketplaceProvider` for blockchain interactions and `ThemeProvider` for theme management).
 
-```md
-Let's see how to [Create a page](./create-a-page.md).
-```
+    * **`aboutUs.js`**: This page is dedicated to providing information about the "Artify" project, its mission, the vision behind it, and potentially introduces the development team (Alikhan, Maksim, Alinur).
 
-**Result:** Let's see how to [Create a page](./create-a-page.md).
+    * **`account.js`**: This page likely serves as the user's private account settings or dashboard. Users might manage their profile details, notification preferences, or other account-specific configurations here. It's distinct from the public author profile.
 
-## Images
+    * **`author.js`**: This is the public-facing profile page for an NFT creator or collector. It typically displays NFTs created by or currently owned by a specific user, along with their public profile information. This page often uses dynamic routing (e.g., `/author/[address]`) to display different profiles.
 
-Regular Markdown images are supported.
+    * **`collection.js`**: This page is designed to showcase a specific collection of NFTs. It might display all NFTs belonging to a particular smart contract or a curated set of items, usually in a gallery or grid view. It could also be a more general "explore" page for all NFTs if not filtered.
 
-You can use absolute paths to reference images in the static directory (`static/img/docusaurus.png`):
+    * **`connectWallet.js`**: This page likely provides a dedicated interface or instructions for users on how to connect their Ethereum wallets (like MetaMask) to the Artify application. It might list supported wallets and guide them through the connection steps initiated by Web3Modal.
 
-```md
-![Docusaurus logo](/img/docusaurus.png)
-```
+    * **`contactUs.js`**: A standard page offering ways for users to get in touch with the Artify team. This could include a contact form, email addresses, links to social media, or support channels.
 
-![Docusaurus logo](/img/docusaurus.png)
+    * **`index.js`**: This is the homepage or main landing page of the Artify marketplace. It's the first page users typically see and aims to showcase featured NFTs, popular collections, calls to action (like "Explore" or "Create"), and an introduction to the platform.
 
-You can reference images relative to the current file as well. This is particularly useful to colocate images close to the Markdown files using them:
+    * **`nft-details.js`**: This is a dynamic page that displays comprehensive information about a single, specific NFT. When a user clicks on an NFT card, they are navigated here. Details usually include the NFT image/media, name, description, current price, owner, seller, transaction history (if implemented), and interactive buttons like "Buy NFT" or "Make Offer". It uses a dynamic route, typically based on the NFT's unique token ID (e.g., `/nft-details/[tokenId]`).
 
-```md
-![Docusaurus logo](./img/docusaurus.png)
-```
+    * **`reSellToken.js`**: This page provides a form or interface for users who own an NFT (that they previously bought on the marketplace or minted themselves) to list it back on the marketplace for sale. It would allow them to set a new price and initiate the reselling transaction.
 
-## Code Blocks
+    * **`searchPage.js`**: This page displays the results of user search queries. It allows users to find specific NFTs, collections, or potentially creators based on keywords. It often includes filtering and sorting options to refine the search results.
 
-Markdown code blocks are supported with Syntax highlighting.
+    * **`subscription.js`**: This page could be for users to subscribe to a newsletter for updates about Artify, new NFT drops, or platform news. It might also be intended for future premium features if the marketplace plans to offer subscription-based services.
 
-````md
-```jsx title="src/components/HelloDocusaurus.js"
-function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
-}
-```
-````
+    * **`uploadNFT.js`**: This is the page where creators can mint new NFTs. It includes a form for inputting all the necessary metadata for the NFT (name, description, price, properties, category, etc.) and an interface (likely the `DropZone` component) for uploading the associated image or media file to IPFS (via Pinata).
 
-```jsx title="src/components/HelloDocusaurus.js"
-function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
-}
-```
+* **`/components`**: This is where all our reusable React components are located. This folder can be further structured by component type or functionality:
+    * `/components/NavBar`: Navigation bar component.
+    * `/components/Footer`: Site footer component.
+    * `/components/Button`: Generic button component.
+    * `/components/NFTCard`, `/components/NFTCardTwo`: Components for displaying NFT cards.
+    * `/components/UploadNFTPage` (upload page that uses `UploadNFT` and `DropZone`).
+    * and others...
+* **`/Context`**: Contains our React Context APIs for managing global state:
+    * `NFTMarketplaceContext.js`: The main context for interacting with the smart contract, managing wallet state, uploading NFTs, etc.
+    * `constans.js`: Constants like smart contract address and ABI.
+    * `NFtMarketplace.json`: ABI of smart contract
+    * `ThemeContext.js`: Context for managing theme switching (light/dark).
+* **`/public`**: For static assets such as images, favicon, etc., which are served directly by URL.
+* **`/styles`**:
+    * `globals.css`: Global styles, CSS variables for themes.
+    * Modular CSS files (`*.module.css`) are located next to their corresponding components.
+* **`/img`**: A folder for local images used in the project (logos, background images for components, etc.), which are imported into components.
+* **`/contracts`**: Source code of smart contracts in Solidity.
+* **`/artifacts`**: ABI and bytecode of compiled contracts. The frontend uses the ABI for interaction.
+* **`scripts/deploy.js`**: Script for deploying contracts.
 
-## Admonitions
+## Main Data Flows
 
-Docusaurus has a special syntax to create admonitions and callouts:
+1.  **Wallet Connection:** The user clicks the "Connect" button, and Web3Modal provides an interface for selecting a wallet. After a successful connection, `NFTMarketplaceContext` saves the address of the current account.
+2.  **NFT Creation:**
+    * The user fills out the form on the NFT upload page and selects an image file.
+    * The image file is uploaded to IPFS via the Pinata API (the `uploadToIPFS` function in the context).
+    * Metadata (name, description, link to the image on IPFS) is also formed into JSON and uploaded to IPFS (the `uploadMetadataToIPFS` function in the context).
+    * The smart contract function `createToken` is called (via `createSale` in the context), passing the metadata URI and price. The user signs the transaction.
+3.  **NFT Purchase:**
+    * The user selects an NFT and clicks "Buy".
+    * The `buyNFT` function in the context calls the smart contract function `createMarketSale`, passing the token ID and the required amount in ETH. The user signs the transaction.
+4.  **Displaying NFTs:**
+    * The functions `fetchNFTs`, `fetchMyNFTsOrListedNFTs` in the context call the corresponding view functions of the smart contract to get a list of NFTs.
+    * For each NFT, its `tokenURI` is obtained.
+    * Using the `tokenURI` (which is an IPFS URL), metadata (name, description, link to the image) is loaded using `axios`.
+    * The data is passed to components (`NFTCard`, `NFTCardTwo`) for display.
 
-```md
-:::tip My tip
-
-Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-This action is dangerous
-
-:::
-```
-
-:::tip My tip
-
-Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-This action is dangerous
-
-:::
-
-## MDX and React Components
-
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
-
-```jsx
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
-    }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
-
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
-```
-
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
-    }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
-
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+This overview should give you a good initial understanding of how the "Artify" frontend is structured. For more detailed information, please refer to the documentation for specific components, pages, and contexts.

@@ -22,3 +22,43 @@ nft:
   label: nft
   permalink: /nft
   description: NFT tag description
+
+pinata:
+  label: pinata
+  permalink: /pinata
+  description: Pinata tag
+
+IPFS:
+  label: IPFS
+  permalink: /ipfs
+  description: IPFS tag
+
+storage:
+  label: storage
+  permalink: /storage
+  description: Storage tag
+
+solidity:
+  label: Solidity
+  permalink: /solidity
+  description: Solidity tag
+
+smart-contract:
+  label: SmartContract
+  permalink: /smart-contract
+  description: SmartContract tag
+
+NextJs:
+  label: Next.js
+  permalink: /next
+  description: Next.js tag
+
+front:
+  label: front
+  permalink: /front
+  description: Front tag
+
+front:
+  label: theme
+  permalink: /theme
+  description: Theme tag
