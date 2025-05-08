@@ -5,7 +5,7 @@ import Style from './HeroSection.module.css';
 import {Button} from '../componentsindex';
 import images from '../../img';
 
-import {NFTMarketplaceContext} from '../../Context/NFTMarketplaceContext'
+import {NFTMarketplaceContext} from '../../Context/NFTMarketplaceContext';
 
 const HeroSection = () => {
   const { titleData } = useContext(NFTMarketplaceContext);
